@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:pill/Profile/changepassword.dart';
-import 'package:pill/Profile/editProfile.dart';
-import 'package:pill/userlogin/login.dart';
+import 'package:pill/USER/Profile/changepassword.dart';
+import 'package:pill/USER/Profile/edit_profile.dart';
+import 'package:pill/USER/userlogin/login.dart';
 
 class Profile extends StatelessWidget {
   const Profile({super.key});

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-// import 'package:medicine_app/constants/Colorcode.dart';
 
 class TimeDemo extends StatefulWidget {
   const TimeDemo({super.key});
@@ -32,7 +31,7 @@ class _TimeDemoState extends State<TimeDemo> {
         }
       },
       child: Text(
-        "${selectedTime.format(context)}",
+        selectedTime.format(context),
         style: const TextStyle(color: Colors.white),
        ),
      );

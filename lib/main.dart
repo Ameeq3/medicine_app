@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pill/admin/pendingdocter.dart';
-import 'package:pill/order.dart';
+import 'package:pill/SHOPKEEPER/addmed.dart';
 import 'package:pill/splash/splash.dart';
-
 void main() {
   runApp(const MyApp());
 }
@@ -12,12 +10,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
-      theme: ThemeData(
-        useMaterial3: true
-      ),
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:AdminPendingDoctor()
+      home:ShopAddmedicine()
     );
   }
 }

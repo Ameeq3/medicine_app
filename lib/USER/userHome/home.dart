@@ -129,7 +129,7 @@ class Home extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(
+                  const  SizedBox(
                       height: 65,
                     ),
                     Column(
@@ -138,7 +138,7 @@ class Home extends StatelessWidget {
                         height: 60,
                         width: 60,
                         ),
-                        Text("No Reminder Found!...",
+                       const Text("No Reminder Found!...",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 18

@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:pill/fluidNavBar.dart';
-import 'package:pill/userlogin/forgetpass.dart';
-import 'package:pill/userlogin/signup.dart';final _formKey = GlobalKey<FormState>();
+import 'package:pill/admin/LOGIN/login.dart';
 
-
-class LoginPage extends StatelessWidget {
-  LoginPage({super.key});
-  
+class AdminSignUp extends StatelessWidget {
+  AdminSignUp({super.key});
+  final _formKey = GlobalKey<FormState>();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
+  final nameController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -16,31 +14,21 @@ class LoginPage extends StatelessWidget {
       body: Container(
         height: double.infinity,
         width: double.infinity,
-        decoration: const BoxDecoration(
-            gradient: LinearGradient(
-          begin: Alignment.topCenter,
-          end: Alignment(0.8, 1),
-          colors: <Color>[
-            Color(0xFFC5CAE9),
-            Color(0xFF9FA8DA),
-            Color(0xFF7986CB),
-            Color(0xFF5C6BC0),
-            Color(0xFF3F51B5),
-          ],
-          tileMode: TileMode.mirror,
-        )),
+        decoration: BoxDecoration(
+          color: Colors.teal[700],
+        ),
         child: Form(
           key: _formKey,
           child: SingleChildScrollView(
             child: Column(
               children: [
                 const SizedBox(
-                  height: 160,
+                  height: 140,
                 ),
                 const Padding(
-                  padding: EdgeInsets.only(right: 170),
+                  padding: EdgeInsets.only(right: 195),
                   child: Text(
-                    "Welcome",
+                    "Create",
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 35,
@@ -48,9 +36,9 @@ class LoginPage extends StatelessWidget {
                   ),
                 ),
                 const Padding(
-                  padding: EdgeInsets.only(right: 220, top: 10),
+                  padding: EdgeInsets.only(right: 170, top: 10),
                   child: Text(
-                    "Back!",
+                    "Account",
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 35,
@@ -58,7 +46,34 @@ class LoginPage extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(
-                  height: 80,
+                  height: 60,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(right: 45, left: 45, bottom: 25),
+                  child: TextFormField(
+                    controller: nameController,
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return "Please enter a name";
+                      } else {
+                        return null;
+                      }
+                    },
+                    decoration: const InputDecoration(
+                      enabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Colors.white
+                        )
+                      ),
+                        filled: true, labelText: "Name",
+                        labelStyle: TextStyle(
+                          color: Colors.white
+                        ),
+                         hintText: "name",
+                         hintStyle: TextStyle(
+                          color: Colors.white
+                         )),
+                  ),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(right: 45, left: 45, bottom: 15),
@@ -66,7 +81,7 @@ class LoginPage extends StatelessWidget {
                     controller: emailController,
                     validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return "Please enter a data";
+                        return "Please enter email";
                       }
                       if (value.isNotEmpty) {
                         String exp = r'^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)+$';
@@ -78,6 +93,7 @@ class LoginPage extends StatelessWidget {
                           return null;
                         }
                       }
+                      return null;
                     },
                     decoration: const InputDecoration(
                       enabledBorder: UnderlineInputBorder(
@@ -85,15 +101,14 @@ class LoginPage extends StatelessWidget {
                           color: Colors.white
                         )
                       ),
-                        filled: true,
-                         labelText: "Email",
-                         labelStyle: TextStyle(
+                        filled: true, labelText: "Email",
+                        labelStyle: TextStyle(
                           color: Colors.white
-                         ),
-                          hintText: "@gmail.com",
-                          hintStyle: TextStyle(
-                            color: Colors.white
-                          )),
+                        ),
+                         hintText: "@gmail.com",
+                         hintStyle: TextStyle(
+                          color: Colors.white
+                         )),
                   ),
                 ),
                 Padding(
@@ -102,7 +117,7 @@ class LoginPage extends StatelessWidget {
                     controller: passwordController,
                     validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return "Please enter a data";
+                        return "Please enter password";
                       }
                       if (value.isNotEmpty) {
                         String pattern =
@@ -114,8 +129,9 @@ class LoginPage extends StatelessWidget {
                           return null;
                         }
                       }
+                      return null;
                     },
-                    decoration:const InputDecoration(
+                    decoration: const InputDecoration(
                       enabledBorder: UnderlineInputBorder(
                         borderSide: BorderSide(
                           color: Colors.white
@@ -129,7 +145,8 @@ class LoginPage extends StatelessWidget {
                         hintText: "enter password",
                         hintStyle: TextStyle(
                           color: Colors.white
-                        )),
+                        )
+                        ),
                   ),
                 ),
                 const SizedBox(
@@ -141,7 +158,7 @@ class LoginPage extends StatelessWidget {
                     const Padding(
                       padding: EdgeInsets.only(left: 45),
                       child: Text(
-                        "Sign in",
+                        "Sign up",
                         style: TextStyle(
                             color: Colors.white,
                             fontSize: 20,
@@ -153,26 +170,12 @@ class LoginPage extends StatelessWidget {
                       height: 75,
                       width: 75,
                       decoration: BoxDecoration(
-                          gradient: const LinearGradient(
-                            begin: Alignment.topRight,
-                            end: Alignment(0.5, 1),
-                            colors: <Color>[
-                              Color(0xFFC5CAE9),
-                              Color(0xFF9FA8DA),
-                              Color(0xFF7986CB),
-                              Color(0xFF5C6BC0),
-                              Color(0xFF3F51B5)
-                            ],
-                            tileMode: TileMode.mirror,
-                          ),
+                         
                           borderRadius: BorderRadius.circular(90),
-                          color: Colors.white),
+                          color: Colors.green[200]),
                       child: IconButton(
                           onPressed: () {
-                            
-                            if (_formKey.currentState!.validate()) {
-                              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const FluidNavBarDemo()));
-                            }
+                            if (_formKey.currentState!.validate()) {}
                           },
                           icon: const Icon(
                             Icons.arrow_right_alt_outlined,
@@ -183,7 +186,7 @@ class LoginPage extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(
-                  height: 110,
+                  height: 60,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -192,13 +195,10 @@ class LoginPage extends StatelessWidget {
                       padding: const EdgeInsets.only(left: 45),
                       child: InkWell(
                           onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => SignUp()));
+                            Navigator.pop(context);
                           },
                           child: const Text(
-                            "Sign up",
+                            "Sign in",
                             style: TextStyle(
                                 color: Colors.white,
                                 decoration: TextDecoration.underline,
@@ -206,23 +206,9 @@ class LoginPage extends StatelessWidget {
                                 fontWeight: FontWeight.normal),
                           )),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(right: 35),
-                      child: InkWell(
-                          onTap: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=>const FogotPassword()));
-                          },
-                          child: const Text(
-                            "forget Password",
-                            style: TextStyle(
-                                decoration: TextDecoration.underline,
-                                color: Colors.white,
-                                fontSize: 14,
-                                fontWeight: FontWeight.normal),
-                          ),),
-                    ),
                   ],
                 ),
+            
               ],
             ),
           ),

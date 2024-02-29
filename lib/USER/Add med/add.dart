@@ -1,8 +1,8 @@
 import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
-import 'package:pill/Add%20med/Listtile.dart';
-import 'package:pill/Add%20med/Timeremind.dart';
-import 'package:pill/Add%20med/numberstepper.dart';
+import 'package:pill/USER/Add%20med/listtile.dart';
+import 'package:pill/USER/Add%20med/time_demo.dart';
+import 'package:pill/USER/Add%20med/numberstepper.dart';
 
 class AddMedcine extends StatefulWidget {
   const AddMedcine({super.key});
@@ -172,9 +172,9 @@ class _AddMedcineState extends State<AddMedcine> {
                                 min: 0,
                                 max: 30,
                                 step: 1,
-                                onChanged: (Value) {
+                                onChanged: (value) {
                                   setState(() {
-                                    _selectedNumber = Value;
+                                    _selectedNumber = value;
                                   });
                                 },
                               )));

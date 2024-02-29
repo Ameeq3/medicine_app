@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pill/fluidNavBar.dart';
-import 'package:pill/forgetpass.dart';
-import 'package:pill/signup.dart';final _formKey = GlobalKey<FormState>();
+import 'package:pill/userlogin/forgetpass.dart';
+import 'package:pill/userlogin/signup.dart';final _formKey = GlobalKey<FormState>();
 
 
 class LoginPage extends StatelessWidget {

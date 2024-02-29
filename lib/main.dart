@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pill/admin/pendingdocter.dart';
 import 'package:pill/order.dart';
 import 'package:pill/splash/splash.dart';
 
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true
       ),
       debugShowCheckedModeBanner: false,
-      home:PSplash()
+      home:AdminPendingDoctor()
     );
   }
 }

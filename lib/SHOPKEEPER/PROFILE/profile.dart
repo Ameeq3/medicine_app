@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:pill/USER/Profile/changepassword.dart';
-import 'package:pill/USER/Profile/edit_profile.dart';
-import 'package:pill/USER/userlogin/login.dart';
+import 'package:pill/SHOPKEEPER/PROFILE/change_pass.dart';
+import 'package:pill/SHOPKEEPER/PROFILE/edit_orofil.dart';
+import 'package:pill/SHOPKEEPER/shoplogin/login.dart';
 
-class Profile extends StatelessWidget {
-  const Profile({super.key});
+class ShopProfile extends StatelessWidget {
+  const ShopProfile({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,19 +12,9 @@ class Profile extends StatelessWidget {
       body: Container(
         height: double.infinity,
         width: double.infinity,
-        decoration: const BoxDecoration(
-            gradient: LinearGradient(
-          begin: Alignment.topCenter,
-          end: Alignment(0.8, 1),
-          colors: <Color>[
-            Color(0xFFC5CAE9),
-            Color(0xFF9FA8DA),
-            Color(0xFF7986CB),
-            Color(0xFF5C6BC0),
-            Color(0xFF3F51B5),
-          ],
-          tileMode: TileMode.mirror,
-        )),
+        decoration:  BoxDecoration(
+          color: Colors.cyan[700]
+        ),
         child: Column(
           children: [
             const SizedBox(
@@ -65,14 +55,24 @@ class Profile extends StatelessWidget {
               height: 15,
             ),
             const Text(
-              "Shuhaib Malik",
+              "Najeeb Malik",
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                  fontSize: 22),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+             const Text(
+              "License Id : 2001564",
               style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
                   fontSize: 18),
             ),
             const SizedBox(
-              height: 10,
+              height: 7,
             ),
             const Text(
               "shuhaibmalik@gmail.com",
@@ -85,7 +85,7 @@ class Profile extends StatelessWidget {
               height: 7,
             ),
             const Text(
-              "7510115506",
+              "7034534532",
               style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
@@ -113,12 +113,12 @@ class Profile extends StatelessWidget {
                           borderRadius: BorderRadius.circular(10)),
                       backgroundColor: Colors.transparent,
                       elevation: 1),
-                  //
+                  
                   onPressed: () {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const EditProfile()));
+                            builder: (context) => const ShopEditProfile()));
                   },
                   child: const Text(
                     "Edit Profile",
@@ -127,7 +127,7 @@ class Profile extends StatelessWidget {
                   )),
             ),
             const SizedBox(
-              height: 30,
+              height: 20,
             ),
             SizedBox(
                 width: 310,
@@ -139,7 +139,7 @@ class Profile extends StatelessWidget {
                         elevation: 1,
                         backgroundColor: Colors.transparent),
                     onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>ChangePass()));
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>ShopChangePass()));
                     },
                     icon: const Icon(
                       Icons.key,
@@ -175,7 +175,7 @@ class Profile extends StatelessWidget {
                         elevation: 1,
                         backgroundColor: Colors.transparent),
                     onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginPage()));
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>ShopLoginPage()));
                     },
                     icon: const Icon(
                       Icons.logout,

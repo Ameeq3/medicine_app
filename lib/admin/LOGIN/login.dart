@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:pill/USER/NavBar/fluid_navbar.dart';
-import 'package:pill/USER/userlogin/forgetpass.dart';
-import 'package:pill/USER/userlogin/signup.dart';
-import 'package:pill/admin/LOGIN/forget.dart';
-import 'package:pill/admin/LOGIN/signup.dart';final _formKey = GlobalKey<FormState>();
+import 'package:pill/ADMIN/LOGIN/forget.dart';
+import 'package:pill/ADMIN/LOGIN/signup.dart';
+import 'package:pill/ADMIN/nav/bottom_nav.dart';final _formKey = GlobalKey<FormState>();
 
 
 class AdminLoginPage extends StatelessWidget {
@@ -153,7 +151,7 @@ class AdminLoginPage extends StatelessWidget {
                           onPressed: () {
                             
                             if (_formKey.currentState!.validate()) {
-                             // Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const FluidNavBarDemo()));
+                              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const AdminNavBar()));
                             }
                           },
                           icon: const Icon(

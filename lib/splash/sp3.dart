@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:pill/USER/NavBar/fluid_navbar.dart';
-import 'package:pill/USER/userlogin/login.dart';
 import 'package:pill/splash/log_option.dart';
 
 class SpThree extends StatelessWidget {

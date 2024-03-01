@@ -8,6 +8,8 @@ class AdminPendingDoctor extends StatelessWidget {
     return Scaffold(
       backgroundColor:Colors.teal[700],
       appBar: AppBar(
+        automaticallyImplyLeading: false,
+        centerTitle: true,
         title: const Text(
           " Approved List",
           style: TextStyle(color: Colors.white),

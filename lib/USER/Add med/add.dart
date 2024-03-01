@@ -1,8 +1,15 @@
+import 'dart:ui';
+
 import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
-import 'package:pill/USER/Add%20med/listtile.dart';
-import 'package:pill/USER/Add%20med/time_demo.dart';
+import 'package:flutter/rendering.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
+import 'package:intl/intl.dart';
+import 'package:pill/USER/Add%20med/Listtile.dart';
 import 'package:pill/USER/Add%20med/numberstepper.dart';
+
+
 
 class AddMedcine extends StatefulWidget {
   const AddMedcine({super.key});
@@ -12,8 +19,12 @@ class AddMedcine extends StatefulWidget {
 }
 
 class _AddMedcineState extends State<AddMedcine> {
+  final _medicinenameController = TextEditingController();
+  final _descriptionController = TextEditingController();
+  final _dateController = TextEditingController();
+  final _timeController = TextEditingController();
   var _selectedNumber = 0;
-
+  
   String? valueChoose;
   final List<String> listItem = [
     "Pill",
@@ -24,12 +35,11 @@ class _AddMedcineState extends State<AddMedcine> {
     "Antibiotics"
   ];
   final List<String> item = [
-    "",
-    "Injection",
-    "Tablet",
-    "Powder",
-    "Inhaler",
-    "Antibiotics"
+    "Every Day",
+    "Every other Day",
+    "Today",
+    "Tommorrow",
+    "Weakly",
   ];
   @override
   Widget build(BuildContext context) {
@@ -53,7 +63,7 @@ class _AddMedcineState extends State<AddMedcine> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(left: 60,top: 60),
+                    padding: const EdgeInsets.only(left: 35,top: 60),
                     child: Image.asset("assets/reminder-pills-512.webp",
                     height: 50,
                     width: 50,)
@@ -105,24 +115,23 @@ class _AddMedcineState extends State<AddMedcine> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-            const  SizedBox(
-                height: 15,
-              ),
+            
               
-             const SizedBox(
-                height: 30,
-              ),
+             
              const Text(
                 "create Your medicine Schedule",
-                style: TextStyle(color: Colors.white, fontSize: 18),
+                style: TextStyle(color: Colors.white, 
+                fontWeight: FontWeight.bold,
+                fontSize: 18),
               ),
              const SizedBox(
-                height: 30,
+                height: 15,
               ),
-             const Padding(
-                padding: EdgeInsets.only(left: 20, right: 20),
+              Padding(
+                padding:const EdgeInsets.only(left: 20, right: 20),
                 child: TextField(
-                  decoration: InputDecoration(
+                  controller: _medicinenameController,
+                  decoration:const InputDecoration(
                     border: OutlineInputBorder(),
                       enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(color: Colors.white)),
@@ -134,10 +143,11 @@ class _AddMedcineState extends State<AddMedcine> {
                       labelStyle: TextStyle(color: Colors.white)),
                 ),
               ),
-             const Padding(
-                padding: EdgeInsets.only(left: 20, right: 20, top: 15),
+              Padding(
+                padding:const EdgeInsets.only(left: 20, right: 20, top: 13),
                 child: TextField(
-                  decoration: InputDecoration(
+                  controller: _descriptionController,
+                  decoration:const InputDecoration(
                     border: OutlineInputBorder(),
                       enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(color: Colors.white)),
@@ -150,7 +160,7 @@ class _AddMedcineState extends State<AddMedcine> {
                 ),
               ),
              const SizedBox(
-                height: 15,
+                height: 13,
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 20,right: 20),
@@ -172,18 +182,18 @@ class _AddMedcineState extends State<AddMedcine> {
                                 min: 0,
                                 max: 30,
                                 step: 1,
-                                onChanged: (value) {
+                                onChanged: (Value) {
                                   setState(() {
-                                    _selectedNumber = value;
+                                    _selectedNumber = Value;
                                   });
                                 },
                               )));
                     },
-                    child: const Row(
+                    child: Row(
                       children: [
                         Text(
-                          "Add Dosage",
-                          style: TextStyle(
+                         _selectedNumber==0?"Add Dosage":_selectedNumber.toString(),
+                          style:const TextStyle(
                             color: Colors.white,
                           ),
                           // selectionColor: Colors.white,
@@ -194,7 +204,7 @@ class _AddMedcineState extends State<AddMedcine> {
                 ),
               ),
               const SizedBox(
-                height: 15,
+                height: 13,
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 20,right: 20),
@@ -227,7 +237,7 @@ class _AddMedcineState extends State<AddMedcine> {
                 ),
               ),
               const SizedBox(
-                height: 15,
+                height: 11,
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 20,right: 20),
@@ -256,27 +266,81 @@ class _AddMedcineState extends State<AddMedcine> {
                   ),
                 ),
               ),
-              const SizedBox(
-                height: 15,
+            const   SizedBox(
+                height: 11,
+              ),
+
+             Padding(
+               padding: const EdgeInsets.only(left: 20,right: 20),
+               child: TextFormField(
+                  controller: _dateController,
+                  readOnly: true,
+                  decoration: InputDecoration(
+                      border: const OutlineInputBorder(),
+                      enabledBorder:const OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.white),
+                      ),
+                      hintText: "Select Date",
+                      hintStyle: const TextStyle(
+                        color:Colors.white,
+                      ),
+                      suffixIcon: IconButton(
+                          onPressed: () async {
+                            final DateTime? _date = await showDatePicker(
+                                context: context,
+                                initialDate: DateTime.now(),
+                                firstDate: DateTime(2000),
+                                lastDate: DateTime(2028));
+                            final _formatteddate = DateFormat(
+                              "dd-MM-yyyy",
+                            ).format(_date!);
+                            setState(() {
+                              _dateController.text = _formatteddate.toString();
+                            });
+                          },
+                          icon: const Icon(
+                            Icons.calendar_month,
+                            color: Colors.white,
+                          ))),
+                ),
+             ),
+             const   SizedBox(
+                height: 13,
               ),
               
-              const Padding(
-                padding:  EdgeInsets.only(left: 20,right: 20),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text("Set Reminder",style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),),
-              
-                    TimeDemo()
-                  ],
+              Padding(
+                padding: const EdgeInsets.only(left: 20,right: 20),
+                child: TextFormField(
+                  controller: _timeController,
+                  readOnly: true,
+                  decoration: InputDecoration(
+                      hintText: "Select Time",
+                      hintStyle: const TextStyle(color: Colors.white),
+                      border: const OutlineInputBorder(),
+                      enabledBorder:const OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.white),
+                      ),
+                      suffixIcon: IconButton(
+                        onPressed: () async {
+                          TimeOfDay? _time = await showTimePicker(
+                              context: context, initialTime: TimeOfDay.now());
+                          setState(() {
+                            _timeController.text = _time!.format(context);
+                          });
+                        },
+                        icon: const Icon(
+                          Icons.alarm,
+                          color: Colors.white,
+                        ),
+                      )),
                 ),
               ),
+            const  SizedBox(
+                height: 15,
+              ),
               SizedBox(
-                width: 100,
+                width: 120,
+                height: 40,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
@@ -288,7 +352,7 @@ class _AddMedcineState extends State<AddMedcine> {
             ],
           ),
         ),
-      ),
-    );
+     ),
+   );
   }
 }

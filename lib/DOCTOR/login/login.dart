@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:pill/ADMIN/nav/bottom_nav.dart';
+import 'package:pill/ADMIN/LOGIN/signup.dart';
+import 'package:pill/DOCTOR/login/forget_pass.dart';
+import 'package:pill/DOCTOR/login/signup.dart';
+import 'package:pill/DOCTOR/nav/bottom_nav.dart';
 
-class AdminSignUp extends StatelessWidget {
-  AdminSignUp({super.key});
-  final _formKey = GlobalKey<FormState>();
+final _formKey = GlobalKey<FormState>();
+class DoctorLoginPage extends StatelessWidget {
+  DoctorLoginPage({super.key});
+  
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
-  final nameController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -15,20 +18,20 @@ class AdminSignUp extends StatelessWidget {
         height: double.infinity,
         width: double.infinity,
         decoration: BoxDecoration(
-          color: Colors.teal[700],
-        ),
+          color: Colors.blueGrey[700]
+          ),
         child: Form(
           key: _formKey,
           child: SingleChildScrollView(
             child: Column(
               children: [
                 const SizedBox(
-                  height: 140,
+                  height: 160,
                 ),
                 const Padding(
-                  padding: EdgeInsets.only(right: 195),
+                  padding: EdgeInsets.only(right: 170),
                   child: Text(
-                    "Create",
+                    "Welcome",
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 35,
@@ -36,9 +39,9 @@ class AdminSignUp extends StatelessWidget {
                   ),
                 ),
                 const Padding(
-                  padding: EdgeInsets.only(right: 170, top: 10),
+                  padding: EdgeInsets.only(right: 220, top: 10),
                   child: Text(
-                    "Account",
+                    "Back!",
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 35,
@@ -46,34 +49,7 @@ class AdminSignUp extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(
-                  height: 60,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(right: 45, left: 45, bottom: 25),
-                  child: TextFormField(
-                    controller: nameController,
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return "Please enter a name";
-                      } else {
-                        return null;
-                      }
-                    },
-                    decoration: const InputDecoration(
-                      enabledBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(
-                          color: Colors.white
-                        )
-                      ),
-                        filled: true, labelText: "Name",
-                        labelStyle: TextStyle(
-                          color: Colors.white
-                        ),
-                         hintText: "name",
-                         hintStyle: TextStyle(
-                          color: Colors.white
-                         )),
-                  ),
+                  height: 80,
                 ),
                 Padding(
                   padding: const EdgeInsets.only(right: 45, left: 45, bottom: 15),
@@ -81,7 +57,7 @@ class AdminSignUp extends StatelessWidget {
                     controller: emailController,
                     validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return "Please enter email";
+                        return "Please enter a data";
                       }
                       if (value.isNotEmpty) {
                         String exp = r'^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)+$';
@@ -101,14 +77,15 @@ class AdminSignUp extends StatelessWidget {
                           color: Colors.white
                         )
                       ),
-                        filled: true, labelText: "Email",
-                        labelStyle: TextStyle(
+                        filled: true,
+                         labelText: "Email",
+                         labelStyle: TextStyle(
                           color: Colors.white
-                        ),
-                         hintText: "@gmail.com",
-                         hintStyle: TextStyle(
-                          color: Colors.white
-                         )),
+                         ),
+                          hintText: "@gmail.com",
+                          hintStyle: TextStyle(
+                            color: Colors.white
+                          )),
                   ),
                 ),
                 Padding(
@@ -117,7 +94,7 @@ class AdminSignUp extends StatelessWidget {
                     controller: passwordController,
                     validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return "Please enter password";
+                        return "Please enter a data";
                       }
                       if (value.isNotEmpty) {
                         String pattern =
@@ -131,7 +108,7 @@ class AdminSignUp extends StatelessWidget {
                       }
                       return null;
                     },
-                    decoration: const InputDecoration(
+                    decoration:const InputDecoration(
                       enabledBorder: UnderlineInputBorder(
                         borderSide: BorderSide(
                           color: Colors.white
@@ -145,8 +122,7 @@ class AdminSignUp extends StatelessWidget {
                         hintText: "enter password",
                         hintStyle: TextStyle(
                           color: Colors.white
-                        )
-                        ),
+                        )),
                   ),
                 ),
                 const SizedBox(
@@ -158,7 +134,7 @@ class AdminSignUp extends StatelessWidget {
                     const Padding(
                       padding: EdgeInsets.only(left: 45),
                       child: Text(
-                        "Sign up",
+                        "Sign in",
                         style: TextStyle(
                             color: Colors.white,
                             fontSize: 20,
@@ -170,13 +146,14 @@ class AdminSignUp extends StatelessWidget {
                       height: 75,
                       width: 75,
                       decoration: BoxDecoration(
-                         
+                          
                           borderRadius: BorderRadius.circular(90),
-                          color: Colors.green[200]),
+                          color: Colors.blueGrey[600]),
                       child: IconButton(
                           onPressed: () {
+                            
                             if (_formKey.currentState!.validate()) {
-                              Navigator.push(context, MaterialPageRoute(builder: (context)=>const AdminNavBar()));
+                              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const DoctorNavBar()));
                             }
                           },
                           icon: const Icon(
@@ -188,7 +165,7 @@ class AdminSignUp extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(
-                  height: 60,
+                  height: 110,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -197,10 +174,13 @@ class AdminSignUp extends StatelessWidget {
                       padding: const EdgeInsets.only(left: 45),
                       child: InkWell(
                           onTap: () {
-                            Navigator.pop(context);
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => DoctorSignUp()));
                           },
                           child: const Text(
-                            "Sign in",
+                            "Sign up",
                             style: TextStyle(
                                 color: Colors.white,
                                 decoration: TextDecoration.underline,
@@ -208,9 +188,24 @@ class AdminSignUp extends StatelessWidget {
                                 fontWeight: FontWeight.normal),
                           )),
                     ),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 35),
+                      child: InkWell(
+                          onTap: () {
+                           
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=> const DoctorForgetPassword()));
+                          },
+                          child: const Text(
+                            "forget Password",
+                            style: TextStyle(
+                                decoration: TextDecoration.underline,
+                                color: Colors.white,
+                                fontSize: 14,
+                                fontWeight: FontWeight.normal),
+                          ),),
+                    ),
                   ],
                 ),
-            
               ],
             ),
           ),

@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 
-class DoctorRequest extends StatelessWidget {
-  const DoctorRequest({super.key});
+class ShopRequest extends StatelessWidget {
+  const ShopRequest({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor:Colors.teal[700],
       appBar: AppBar(
+        automaticallyImplyLeading: false,
+        centerTitle: true,
         title: const Text(
-          "Doctor Request List",
+          "Shopkeeper Request List",
           style: TextStyle(color: Colors.white),
         ),elevation: 0,
         backgroundColor: Colors.teal[700]
@@ -20,7 +22,7 @@ class DoctorRequest extends StatelessWidget {
         children: [
         const Padding(
            padding: EdgeInsets.only(left: 20),
-           child: Text("Doctors",
+           child: Text("ShopKeeper",
            style: TextStyle(
             fontSize: 22,
             color: Colors.white,
@@ -51,7 +53,7 @@ class DoctorRequest extends StatelessWidget {
                         children: [
                           Padding(
                             padding: EdgeInsets.only(top: 12,right: 90,left: 20),
-                            child: Text("Dr Najeeb",
+                            child: Text("Name",
                             style: TextStyle(
                               color: Colors.black,
                               fontSize: 20,
@@ -60,7 +62,7 @@ class DoctorRequest extends StatelessWidget {
                           ),
                           Padding(
                             padding: EdgeInsets.only(top: 7,left: 20),
-                            child: Text("Dr Id",
+                            child: Text("Id",
                             style: TextStyle(
                               color: Colors.black,
                               fontSize: 17,
@@ -79,7 +81,7 @@ class DoctorRequest extends StatelessWidget {
                           ),
                         ],
                       ),
-                     const SizedBox(width: 45,),
+                     const SizedBox(width: 90,),
                       Container(
                         height: 50,
                         width: 50,

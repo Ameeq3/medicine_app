@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:pill/ADMIN/nav/bottom_nav.dart';
+import 'package:pill/SHOPKEEPER/nav/navbar.dart';
 
-class AdminSignUp extends StatelessWidget {
-  AdminSignUp({super.key});
+class ShopSignUp extends StatelessWidget {
+  ShopSignUp({super.key});
   final _formKey = GlobalKey<FormState>();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   final nameController = TextEditingController();
+  final licensController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +16,7 @@ class AdminSignUp extends StatelessWidget {
         height: double.infinity,
         width: double.infinity,
         decoration: BoxDecoration(
-          color: Colors.teal[700],
+          color: Colors.cyan[800],
         ),
         child: Form(
           key: _formKey,
@@ -23,7 +24,7 @@ class AdminSignUp extends StatelessWidget {
             child: Column(
               children: [
                 const SizedBox(
-                  height: 140,
+                  height: 110,
                 ),
                 const Padding(
                   padding: EdgeInsets.only(right: 195),
@@ -152,6 +153,34 @@ class AdminSignUp extends StatelessWidget {
                 const SizedBox(
                   height: 35,
                 ),
+                
+                Padding(
+                  padding: const EdgeInsets.only(right: 45, left: 45, bottom: 25),
+                  child: TextFormField(
+                    controller: licensController,
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return "Please enter a name";
+                      } else {
+                        return null;
+                      }
+                    },
+                    decoration: const InputDecoration(
+                      enabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Colors.white
+                        )
+                      ),
+                        filled: true, labelText: "License Id :",
+                        labelStyle: TextStyle(
+                          color: Colors.white
+                        ),
+                         hintText: "License Id",
+                         hintStyle: TextStyle(
+                          color: Colors.white
+                         )),
+                  ),
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -172,11 +201,11 @@ class AdminSignUp extends StatelessWidget {
                       decoration: BoxDecoration(
                          
                           borderRadius: BorderRadius.circular(90),
-                          color: Colors.green[200]),
+                          color: Colors.cyan[700]),
                       child: IconButton(
                           onPressed: () {
                             if (_formKey.currentState!.validate()) {
-                              Navigator.push(context, MaterialPageRoute(builder: (context)=>const AdminNavBar()));
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>const ShopNavBare()));
                             }
                           },
                           icon: const Icon(

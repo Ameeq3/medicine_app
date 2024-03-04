@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:pill/ADMIN/LOGIN/signup.dart';
 import 'package:pill/DOCTOR/login/forget_pass.dart';
 import 'package:pill/DOCTOR/login/signup.dart';
 import 'package:pill/DOCTOR/nav/bottom_nav.dart';
@@ -13,20 +12,22 @@ class DoctorLoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+        // double screenwidth = MediaQuery.of(context).size.width;
+            double screenheight = MediaQuery.of(context).size.height;
     return Scaffold(
       body: Container(
         height: double.infinity,
         width: double.infinity,
         decoration: BoxDecoration(
-          color: Colors.blueGrey[700]
+          color: Colors.teal[700]
           ),
         child: Form(
           key: _formKey,
           child: SingleChildScrollView(
             child: Column(
               children: [
-                const SizedBox(
-                  height: 160,
+                 SizedBox(
+                  height: screenheight * .20,
                 ),
                 const Padding(
                   padding: EdgeInsets.only(right: 170),
@@ -48,8 +49,8 @@ class DoctorLoginPage extends StatelessWidget {
                         color: Colors.white),
                   ),
                 ),
-                const SizedBox(
-                  height: 80,
+                 SizedBox(
+                   height:screenheight * .10,
                 ),
                 Padding(
                   padding: const EdgeInsets.only(right: 45, left: 45, bottom: 15),
@@ -125,8 +126,8 @@ class DoctorLoginPage extends StatelessWidget {
                         )),
                   ),
                 ),
-                const SizedBox(
-                  height: 35,
+                 SizedBox(
+                  height: screenheight * .03,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -148,7 +149,7 @@ class DoctorLoginPage extends StatelessWidget {
                       decoration: BoxDecoration(
                           
                           borderRadius: BorderRadius.circular(90),
-                          color: Colors.blueGrey[600]),
+                          color: Colors.green[300]),
                       child: IconButton(
                           onPressed: () {
                             
@@ -164,8 +165,8 @@ class DoctorLoginPage extends StatelessWidget {
                     )
                   ],
                 ),
-                const SizedBox(
-                  height: 110,
+                SizedBox(
+                  height: screenheight * .13,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,

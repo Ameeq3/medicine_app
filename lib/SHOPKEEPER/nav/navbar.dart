@@ -29,6 +29,8 @@ class _ShopNavBareState extends State<ShopNavBare> {
 
   @override
   Widget build(BuildContext context) {
+     double screenheight = MediaQuery.of(context).size.height;
+
     return Scaffold(
       extendBody: false,
       body: SizedBox.expand(
@@ -47,25 +49,28 @@ class _ShopNavBareState extends State<ShopNavBare> {
           ],
         ),
       ),
-        bottomNavigationBar: FloatingNavbar(
-          backgroundColor: Colors.cyan[800],
-          items: [
-            
-             FloatingNavbarItem(icon: Icons.shopping_cart_checkout_rounded, title: 'View Orders'),
-            FloatingNavbarItem(icon: Icons.medical_services_outlined,
-            title: 'Add Stock'),
-            FloatingNavbarItem(icon: Icons.person, title: 'Profile'),
-           
-            // FloatingNavbarItem(icon: Icons.settings, title: 'Settings'),
-
-          ], 
-          currentIndex: _index, 
-          onTap:(index){
-           setState(() {
-             _pageController.jumpToPage(index);
-           });
-          }
-      ),
+        bottomNavigationBar: SizedBox(
+          height: screenheight * .10,
+          child: FloatingNavbar(
+            backgroundColor: Colors.cyan[800],
+            items: [
+              
+               FloatingNavbarItem(icon: Icons.shopping_cart_checkout_rounded, title: 'View Orders'),
+              FloatingNavbarItem(icon: Icons.medical_services_outlined,
+              title: 'Add Stock'),
+              FloatingNavbarItem(icon: Icons.person, title: 'Profile'),
+             
+              // FloatingNavbarItem(icon: Icons.settings, title: 'Settings'),
+          
+            ], 
+            currentIndex: _index, 
+            onTap:(index){
+             setState(() {
+               _pageController.jumpToPage(index);
+             });
+            }
+                ),
+        ),
     );
   }
 }

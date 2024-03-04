@@ -11,20 +11,22 @@ class DoctorSignUp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+   // double screenwidth = MediaQuery.of(context).size.width;
+            double screenheight = MediaQuery.of(context).size.height;
     return Scaffold(
       body: Container(
         height: double.infinity,
         width: double.infinity,
         decoration: BoxDecoration(
-          color: Colors.blueGrey[700],
+          color: Colors.teal[700],
         ),
         child: Form(
           key: _formKey,
           child: SingleChildScrollView(
             child: Column(
               children: [
-                const SizedBox(
-                  height: 110,
+                SizedBox(
+                  height: screenheight * .14,
                 ),
                 const Padding(
                   padding: EdgeInsets.only(right: 195),
@@ -46,8 +48,8 @@ class DoctorSignUp extends StatelessWidget {
                         color: Colors.white),
                   ),
                 ),
-                const SizedBox(
-                  height: 60,
+                SizedBox(
+                  height: screenheight * .07,
                 ),
                 Padding(
                   padding: const EdgeInsets.only(right: 45, left: 45, bottom: 25),
@@ -150,8 +152,8 @@ class DoctorSignUp extends StatelessWidget {
                         ),
                   ),
                 ),
-                const SizedBox(
-                  height: 35,
+                SizedBox(
+                  height:screenheight * .03 ,
                 ),
                 
                 Padding(
@@ -201,7 +203,7 @@ class DoctorSignUp extends StatelessWidget {
                       decoration: BoxDecoration(
                          
                           borderRadius: BorderRadius.circular(90),
-                          color: Colors.blueGrey[500]),
+                          color: Colors.green[300]),
                       child: IconButton(
                           onPressed: () {
                             if (_formKey.currentState!.validate()) {
@@ -216,8 +218,8 @@ class DoctorSignUp extends StatelessWidget {
                     )
                   ],
                 ),
-                const SizedBox(
-                  height: 60,
+               SizedBox(
+                  height:screenheight * .08,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,

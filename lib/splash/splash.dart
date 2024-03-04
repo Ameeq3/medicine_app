@@ -12,7 +12,7 @@ class PSplash extends StatefulWidget {
 
 class _PSplashState extends State<PSplash> {
   void splashMethod(){
-    Timer(const Duration(seconds: 5), () {
+    Timer(const Duration(seconds: 2,milliseconds: 5), () {
       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> const SpOne()),);
      });
   }

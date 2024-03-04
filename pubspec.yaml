@@ -80,6 +80,9 @@ flutter:
     - assets/alarm.png
     - assets/alert.png
     - assets/profile.jpg
+    - assets/decline.png
+    - assets/delete.png
+    - assets/edit.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

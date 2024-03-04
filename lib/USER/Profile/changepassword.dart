@@ -95,6 +95,7 @@ class ChangePass extends StatelessWidget {
                         return null;
                       },
                      decoration:const InputDecoration(
+                      fillColor: Colors.transparent,
                       labelText: "New Password",
                       labelStyle: TextStyle(
                         color: Colors.white
@@ -122,6 +123,7 @@ class ChangePass extends StatelessWidget {
                               return null;
                },
                     decoration: const InputDecoration(
+                      fillColor: Colors.transparent,
                       border: OutlineInputBorder(),
                       labelText: "Confirm Password",
                       labelStyle: TextStyle(

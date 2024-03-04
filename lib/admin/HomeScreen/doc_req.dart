@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
 
 class DoctorRequest extends StatelessWidget {
-  const DoctorRequest({super.key});
+ const  DoctorRequest({super.key});
 
   @override
+  
   Widget build(BuildContext context) {
+        double screenwidth = MediaQuery.of(context).size.width;
+            double screenheight = MediaQuery.of(context).size.height;
+
+
     return Scaffold(
-      backgroundColor:Colors.teal[700],
+      backgroundColor:Colors.blueGrey[700],
       appBar: AppBar(
         automaticallyImplyLeading: false,
         centerTitle: true,
@@ -14,7 +19,7 @@ class DoctorRequest extends StatelessWidget {
           "Doctor Request List",
           style: TextStyle(color: Colors.white),
         ),elevation: 0,
-        backgroundColor: Colors.teal[700]
+        backgroundColor: Colors.blueGrey[700]
       ),
       body: SafeArea(
           child: Column(
@@ -29,17 +34,17 @@ class DoctorRequest extends StatelessWidget {
             fontWeight: FontWeight.bold
            ),),
          ),
-        const SizedBox(
-          height: 8,
+         SizedBox(
+          height: screenheight * 1/100 ,
          ),
           Expanded(
             child: ListView.builder(
-              itemCount: 5,
+              itemCount: 10,
               itemBuilder: (context, index) {
                 return Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: Container(
-                    height: 100,
+                    height: screenheight * 1/7,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
                       color: Colors.grey[350],
@@ -61,7 +66,7 @@ class DoctorRequest extends StatelessWidget {
                             ),),
                           ),
                           Padding(
-                            padding: EdgeInsets.only(top: 7,left: 20),
+                            padding: EdgeInsets.only(top:7,left: 20),
                             child: Text("Dr Id",
                             style: TextStyle(
                               color: Colors.black,
@@ -71,7 +76,7 @@ class DoctorRequest extends StatelessWidget {
                           ),
                           
                           Padding(
-                            padding: EdgeInsets.only(top: 2,left: 20),
+                            padding: EdgeInsets.only(top: 1,left: 20),
                             child: Text("E-mail",
                             style: TextStyle(
                               color: Colors.black,
@@ -81,27 +86,14 @@ class DoctorRequest extends StatelessWidget {
                           ),
                         ],
                       ),
-                     const SizedBox(width: 45,),
-                      Container(
-                        height: 50,
-                        width: 50,
-                        decoration: const BoxDecoration(
-                          color: Colors.green,
-                          borderRadius: BorderRadius.only(topLeft: Radius.circular(20),bottomLeft: Radius.circular(20))
+                      SizedBox(width: screenwidth * .12,),
+                      IconButton(onPressed: (){}, 
+                      icon:const Icon(Icons.check_circle_outline,color: Color.fromARGB(255, 30, 137, 34),size: 37,),),
+                      IconButton(
+                        onPressed: (){}, 
+                        icon: Image.asset("assets/decline.png",height: 31,width: 31,color: const Color.fromARGB(255, 196, 41, 30),filterQuality:FilterQuality.high ,),
                         ),
-                        child: IconButton(onPressed: (){}, 
-                        icon:const Icon(Icons.check,color: Colors.white,size: 30,)),
-                      ),
-                      Container(
-                        height: 50,
-                        width: 50,
-                        decoration: const BoxDecoration(
-                          color: Colors.red,
-                          borderRadius: BorderRadius.only(topRight: Radius.circular(20),bottomRight: Radius.circular(20))
-                        ),
-                        child: IconButton(onPressed: (){},
-                         icon:const Icon(Icons.clear,color: Colors.white,size: 30,)),
-                      )
+                      
                     ],
                   ),
                   ),

@@ -144,6 +144,7 @@ class Profile extends StatelessWidget {
                     icon: const Icon(
                       Icons.key,
                       size: 30,
+                      color: Colors.blue
                     ),
                     label: const Row(
                       children: [
@@ -153,12 +154,13 @@ class Profile extends StatelessWidget {
                         Text(
                           "Change Password",
                           style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 16),
+                              fontWeight: FontWeight.bold, fontSize: 16,color: Colors.white),
                         ),
-                        SizedBox(width: 70),
+                        SizedBox(width:60),
                         Icon(
                           Icons.arrow_forward,
                           size: 30,
+                          color: Colors.blue,
                         )
                       ],
                     ))),
@@ -180,6 +182,7 @@ class Profile extends StatelessWidget {
                     icon: const Icon(
                       Icons.logout,
                       size: 30,
+                      color: Colors.blue,
                     ),
                     label: const Row(
                       children: [
@@ -189,12 +192,13 @@ class Profile extends StatelessWidget {
                         Text(
                           "Log Out",
                           style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 16),
+                              fontWeight: FontWeight.bold, fontSize: 16,color: Colors.white),
                         ),
-                        SizedBox(width: 144),
+                        SizedBox(width: 136),
                         Icon(
                           Icons.arrow_forward,
                           size: 30,
+                          color: Colors.blue,
                         )
                       ],
                     ))),
@@ -229,11 +233,11 @@ class Profile extends StatelessWidget {
                               fontSize: 16),
                         ),
                         SizedBox(width: 90),
-                        Icon(
-                          Icons.arrow_forward,
-                          size: 30,
-                          color: Colors.red,
-                        )
+                        // Icon(
+                        //   Icons.arrow_forward,
+                        //   size: 30,
+                        //   color: Colors.red,
+                        // )
                       ],
                     ))),
           ],

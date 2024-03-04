@@ -5,14 +5,16 @@ class DoctorForgetPassword extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenwidth = MediaQuery.of(context).size.width;
+            double screenheight = MediaQuery.of(context).size.height;
     return Scaffold(
       body: Container(
-       color: Colors.blueGrey[700],
+       color: Colors.teal[700],
 
         child: Center(
           child: Container(
-            height: 350,
-            width: 350,
+            height: screenheight * 1/02,
+            width: screenwidth * .9,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               border: Border.all(width:0,color: Colors.white),
@@ -23,7 +25,7 @@ class DoctorForgetPassword extends StatelessWidget {
                 top: 70,
                 left: 30,
                 right: 30,
-                // bottom:  MediaQuery.of(context).viewInsets.bottom,
+                
               ),
               child: SingleChildScrollView(
                 child: Column(
@@ -33,8 +35,8 @@ class DoctorForgetPassword extends StatelessWidget {
                        fontSize: 20,
                        fontWeight: FontWeight.bold,
                     ),),
-                   const  SizedBox(
-                      height: 20,
+                  SizedBox(
+                      height: screenheight * .03,
                     ),
                     TextFormField(
                       decoration:const InputDecoration(
@@ -48,8 +50,8 @@ class DoctorForgetPassword extends StatelessWidget {
                         )
                       ),
                     ),
-                 const   SizedBox(
-                      height: 10,
+                SizedBox(
+                      height:screenheight * .02,
                     ),
                      TextFormField(
                       decoration:const InputDecoration(
@@ -65,12 +67,12 @@ class DoctorForgetPassword extends StatelessWidget {
                         )
                       ),
                     ),
-                  const  SizedBox(
-                      height: 20,
+                   SizedBox(
+                      height: screenheight * .03,
                     ),
                     SizedBox(
-                      width: 170,
-                      height: 35,
+                      width: screenwidth * .45,
+                      height: screenheight * .05,
                       child: ElevatedButton(
                        style:  ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),

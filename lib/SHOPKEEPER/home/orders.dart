@@ -6,7 +6,7 @@ class Orders extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor:  Colors.cyan[700],
+      backgroundColor:  Colors.cyan[800],
       appBar: AppBar(
         centerTitle: true,
         automaticallyImplyLeading: false,
@@ -17,7 +17,7 @@ class Orders extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
-        backgroundColor:  Colors.cyan[700],
+        backgroundColor:  Colors.cyan[800],
         elevation: 1,
       ),
       body: SafeArea(

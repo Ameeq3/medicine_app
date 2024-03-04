@@ -54,6 +54,7 @@ class EditProfile extends StatelessWidget {
                 padding: EdgeInsets.only(left: 40,right: 40),
                 child: TextField(
                   decoration: InputDecoration(
+                    fillColor: Colors.transparent,
                     filled: true,
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
@@ -73,6 +74,7 @@ class EditProfile extends StatelessWidget {
                 padding:  EdgeInsets.only(left: 40,right: 40,top: 20),
                 child: TextField(
                   decoration: InputDecoration(
+                    fillColor: Colors.transparent,
                     filled: true,
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
@@ -92,6 +94,7 @@ class EditProfile extends StatelessWidget {
                 padding: EdgeInsets.only(left: 40,right: 40,top: 20),
                 child: TextField(
                   decoration: InputDecoration(
+                    fillColor: Colors.transparent,
                     filled: true,
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(

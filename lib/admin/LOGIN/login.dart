@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:pill/ADMIN/LOGIN/forget.dart';
-import 'package:pill/ADMIN/LOGIN/signup.dart';
 import 'package:pill/ADMIN/nav/bottom_nav.dart';final _formKey = GlobalKey<FormState>();
 
 
@@ -12,19 +10,21 @@ class AdminLoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // double screenwidth = MediaQuery.of(context).size.width;
+            double screenheight = MediaQuery.of(context).size.height;
     return Scaffold(
       body: Container(
         height: double.infinity,
         width: double.infinity,
         decoration: BoxDecoration(
-          color: Colors.teal[700]),
+          color: Colors.blueGrey[700]),
         child: Form(
           key: _formKey,
           child: SingleChildScrollView(
             child: Column(
               children: [
-                const SizedBox(
-                  height: 160,
+                 SizedBox(
+                  height: screenheight * .20,
                 ),
                 const Padding(
                   padding: EdgeInsets.only(right: 170),
@@ -46,8 +46,8 @@ class AdminLoginPage extends StatelessWidget {
                         color: Colors.white),
                   ),
                 ),
-                const SizedBox(
-                  height: 80,
+                 SizedBox(
+                  height:screenheight * .10
                 ),
                 Padding(
                   padding: const EdgeInsets.only(right: 45, left: 45, bottom: 15),
@@ -123,8 +123,8 @@ class AdminLoginPage extends StatelessWidget {
                         )),
                   ),
                 ),
-                const SizedBox(
-                  height: 35,
+                 SizedBox(
+                  height: screenheight * .03,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -140,13 +140,13 @@ class AdminLoginPage extends StatelessWidget {
                       ),
                     ),
                     Container(
-                      margin: const EdgeInsets.only(right: 50),
+                      margin: const  EdgeInsets.only(right: 50),
                       height: 75,
                       width: 75,
                       decoration: BoxDecoration(
                           
                           borderRadius: BorderRadius.circular(90),
-                          color: Colors.green[300]),
+                          color: Colors.blueGrey[600]),
                       child: IconButton(
                           onPressed: () {
                             
@@ -162,48 +162,7 @@ class AdminLoginPage extends StatelessWidget {
                     )
                   ],
                 ),
-                const SizedBox(
-                  height: 110,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 45),
-                      child: InkWell(
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => AdminSignUp()));
-                          },
-                          child: const Text(
-                            "Sign up",
-                            style: TextStyle(
-                                color: Colors.white,
-                                decoration: TextDecoration.underline,
-                                fontSize: 15,
-                                fontWeight: FontWeight.normal),
-                          )),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(right: 35),
-                      child: InkWell(
-                          onTap: () {
-                           
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=>const AdminFogotPassword()));
-                          },
-                          child: const Text(
-                            "forget Password",
-                            style: TextStyle(
-                                decoration: TextDecoration.underline,
-                                color: Colors.white,
-                                fontSize: 14,
-                                fontWeight: FontWeight.normal),
-                          ),),
-                    ),
-                  ],
-                ),
+               
               ],
             ),
           ),

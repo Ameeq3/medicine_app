@@ -13,7 +13,7 @@ class ShopProfile extends StatelessWidget {
         height: double.infinity,
         width: double.infinity,
         decoration:  BoxDecoration(
-          color: Colors.cyan[700]
+          color: Colors.cyan[800]
         ),
         child: Column(
           children: [

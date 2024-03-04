@@ -20,7 +20,7 @@ class _ShopAddmedicineState extends State<ShopAddmedicine> {
           fontWeight: FontWeight.w600,
           fontSize: 23
         ),),
-        backgroundColor: Colors.cyan[700],
+        backgroundColor: Colors.cyan[800],
         elevation: 0,
       ),
       floatingActionButton: FloatingActionButton(
@@ -113,7 +113,7 @@ class _ShopAddmedicineState extends State<ShopAddmedicine> {
                 child: Container(
                   height: MediaQuery.of(context).size.height * 0.4,
                   decoration: BoxDecoration(
-                    color: Colors.cyan[700],
+                    color: Colors.cyan[800],
                     borderRadius: BorderRadius.circular(20),
                   ),
                   margin: const EdgeInsets.all(0),

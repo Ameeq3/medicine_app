@@ -1,9 +1,5 @@
-import 'dart:ui';
-
 import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:intl/intl.dart';
 import 'package:pill/USER/Add%20med/Listtile.dart';
@@ -169,9 +165,10 @@ class _AddMedcineState extends State<AddMedcine> {
                   width: 460,
                   child: OutlinedButton(
                     style: OutlinedButton.styleFrom(
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
                         side: const BorderSide(
                       color: Colors.white,
-                    )),
+                    ),),
                     onPressed: () {
                       showDialog(
                           context: context,
@@ -182,9 +179,9 @@ class _AddMedcineState extends State<AddMedcine> {
                                 min: 0,
                                 max: 30,
                                 step: 1,
-                                onChanged: (Value) {
+                                onChanged: (value) {
                                   setState(() {
-                                    _selectedNumber = Value;
+                                    _selectedNumber = value;
                                   });
                                 },
                               )));
@@ -286,16 +283,16 @@ class _AddMedcineState extends State<AddMedcine> {
                       ),
                       suffixIcon: IconButton(
                           onPressed: () async {
-                            final DateTime? _date = await showDatePicker(
+                            final DateTime? date = await showDatePicker(
                                 context: context,
                                 initialDate: DateTime.now(),
                                 firstDate: DateTime(2000),
                                 lastDate: DateTime(2028));
-                            final _formatteddate = DateFormat(
+                            final formatteddate = DateFormat(
                               "dd-MM-yyyy",
-                            ).format(_date!);
+                            ).format(date!);
                             setState(() {
-                              _dateController.text = _formatteddate.toString();
+                              _dateController.text = formatteddate.toString();
                             });
                           },
                           icon: const Icon(
@@ -322,10 +319,10 @@ class _AddMedcineState extends State<AddMedcine> {
                       ),
                       suffixIcon: IconButton(
                         onPressed: () async {
-                          TimeOfDay? _time = await showTimePicker(
+                          TimeOfDay? time = await showTimePicker(
                               context: context, initialTime: TimeOfDay.now());
                           setState(() {
-                            _timeController.text = _time!.format(context);
+                            _timeController.text = time!.format(context);
                           });
                         },
                         icon: const Icon(

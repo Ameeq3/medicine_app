@@ -6,19 +6,22 @@ class DoctorEditProfile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
+    double screenwidth = MediaQuery.of(context).size.width;
+    double screenheight = MediaQuery.of(context).size.height;
     return Scaffold(
      
       body: Container(
         height: double.infinity,
         width: double.infinity,
          decoration: BoxDecoration(
-       color: Colors.blueGrey[700]
+       color: Colors.teal[700]
        ),
         child: SingleChildScrollView(
           child: Column(
             children: [
-             const SizedBox(
-                height: 80,
+              SizedBox(
+                height: screenheight *.06,
               ),
             const  Text("Edit Profile",
               style: TextStyle(
@@ -26,8 +29,8 @@ class DoctorEditProfile extends StatelessWidget {
                 color: Colors.white,
                 fontSize: 21
               ),),
-             const SizedBox(
-                height: 50,
+              SizedBox(
+                height: screenheight *.05,
               ),
              const CircleAvatar(
                 radius: 80,
@@ -37,8 +40,8 @@ class DoctorEditProfile extends StatelessWidget {
                   backgroundImage: AssetImage("assets/profile.jpg")
                 ),
               ),
-             const SizedBox(
-                height: 40,
+             SizedBox(
+                height: screenheight *.06,
               ),
              const Padding(
                 padding: EdgeInsets.only(left: 40,right: 40),
@@ -97,16 +100,17 @@ class DoctorEditProfile extends StatelessWidget {
                   ),
                 ),
               ),
-             const SizedBox(
-                height: 20,
+             SizedBox(
+                height: screenheight *.02,
               ),
               Row(
                 children: [
                    Padding(
                 padding: const EdgeInsets.only(left: 40),
                 child: SizedBox(
-                  width: 130,
-                  height: 40,
+                  width: screenwidth * .34,
+                height: screenheight *.05,
+              
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
@@ -126,12 +130,12 @@ class DoctorEditProfile extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(left: 50),
                     child: SizedBox(
-                      width: 130,
-                      height: 40,
+                     width: screenwidth * .34,
+                height: screenheight *.05,
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-                          backgroundColor: const Color.fromARGB(255, 57, 144, 182)
+                          backgroundColor: Colors.teal[800]
                         ),
                         onPressed: (){
                           Navigator.pop(context);

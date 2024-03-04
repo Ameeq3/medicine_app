@@ -2,26 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:pill/DOCTOR/login/login.dart';
 import 'package:pill/DOCTOR/profile/change_pass.dart';
 import 'package:pill/DOCTOR/profile/edit_profile.dart';
-import 'package:pill/SHOPKEEPER/PROFILE/change_pass.dart';
-import 'package:pill/SHOPKEEPER/PROFILE/edit_orofil.dart';
 
 class DoctorProfile extends StatelessWidget {
   const DoctorProfile({super.key});
 
   @override
   Widget build(BuildContext context) {
+    double screenwidth = MediaQuery.of(context).size.width;
+    double screenheight = MediaQuery.of(context).size.height;
     return Scaffold(
       body: Container(
         height: double.infinity,
         width: double.infinity,
-        decoration:  BoxDecoration(
-          color: Colors.blueGrey[700]
-        ),
+        decoration: BoxDecoration(color: Colors.teal[700]),
         child: Column(
           children: [
-            const SizedBox(
-              height: 70,
-            ),
+            SizedBox(height: screenheight * .07),
             const Text(
               "Profile",
               style: TextStyle(
@@ -29,9 +25,7 @@ class DoctorProfile extends StatelessWidget {
                   color: Colors.white,
                   fontSize: 21),
             ),
-            const SizedBox(
-              height: 20,
-            ),
+            SizedBox(height: screenheight * .03),
             CircleAvatar(
               radius: 60,
               backgroundColor: Colors.white,
@@ -53,9 +47,7 @@ class DoctorProfile extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(
-              height: 15,
-            ),
+            SizedBox(height: screenheight * .02),
             const Text(
               "Dr Najeeb Malik",
               style: TextStyle(
@@ -63,19 +55,15 @@ class DoctorProfile extends StatelessWidget {
                   color: Colors.white,
                   fontSize: 22),
             ),
-            const SizedBox(
-              height: 10,
-            ),
-             const Text(
+            SizedBox(height: screenheight * .01),
+            const Text(
               "Reg No : 2001564",
               style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
                   fontSize: 18),
             ),
-            const SizedBox(
-              height: 7,
-            ),
+            SizedBox(height: screenheight * .007),
             const Text(
               "shuhaibmalik@gmail.com",
               style: TextStyle(
@@ -83,9 +71,7 @@ class DoctorProfile extends StatelessWidget {
                   color: Colors.white,
                   fontSize: 18),
             ),
-            const SizedBox(
-              height: 7,
-            ),
+            SizedBox(height: screenheight * .007),
             const Text(
               "7034534532",
               style: TextStyle(
@@ -93,9 +79,7 @@ class DoctorProfile extends StatelessWidget {
                   color: Colors.white,
                   fontSize: 18),
             ),
-            const SizedBox(
-              height: 7,
-            ),
+            SizedBox(height: screenheight * .007),
             const Text(
               "kochi , Kakkanad",
               style: TextStyle(
@@ -103,19 +87,16 @@ class DoctorProfile extends StatelessWidget {
                   color: Colors.white,
                   fontSize: 18),
             ),
-            const SizedBox(
-              height: 30,
-            ),
+            SizedBox(height: screenheight * .04),
             SizedBox(
-              width: 130,
-              height: 45,
+               width: screenwidth * .34,
+                height: screenheight *.06,
               child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10)),
                       backgroundColor: Colors.transparent,
                       elevation: 1),
-                  
                   onPressed: () {
                     Navigator.push(
                         context,
@@ -128,12 +109,10 @@ class DoctorProfile extends StatelessWidget {
                         fontWeight: FontWeight.bold, color: Colors.white),
                   )),
             ),
-            const SizedBox(
-              height: 20,
-            ),
+            SizedBox(height: screenheight * .03),
             SizedBox(
-                width: 310,
-                height: 55,
+                width: screenwidth * .8,
+                height: screenheight *.07,
                 child: ElevatedButton.icon(
                     style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(
@@ -141,35 +120,35 @@ class DoctorProfile extends StatelessWidget {
                         elevation: 1,
                         backgroundColor: Colors.transparent),
                     onPressed: () {
-                     Navigator.push(context, MaterialPageRoute(builder: (context)=>DoctorChangePass()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => DoctorChangePass()));
                     },
                     icon: const Icon(
                       Icons.key,
                       size: 30,
                     ),
-                    label: const Row(
+                    label: Row(
                       children: [
-                        SizedBox(
-                          width: 8,
-                        ),
-                        Text(
+                        SizedBox(width: screenwidth * .02),
+                       const Text(
                           "Change Password",
                           style: TextStyle(
                               fontWeight: FontWeight.bold, fontSize: 16),
                         ),
-                        SizedBox(width: 70),
-                        Icon(
+                        SizedBox(width: screenwidth * .19),
+                      const  Icon(
                           Icons.arrow_forward,
                           size: 30,
                         )
                       ],
                     ))),
-            const SizedBox(
-              height: 20,
-            ),
             SizedBox(
-                width: 310,
-                height: 55,
+              height: screenheight * .025),
+            SizedBox(
+                width: screenwidth * .8,
+                height: screenheight *.07,
                 child: ElevatedButton.icon(
                     style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(
@@ -177,35 +156,37 @@ class DoctorProfile extends StatelessWidget {
                         elevation: 1,
                         backgroundColor: Colors.transparent),
                     onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>DoctorLoginPage()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => DoctorLoginPage()));
                     },
                     icon: const Icon(
                       Icons.logout,
                       size: 30,
                     ),
-                    label: const Row(
+                    label:  Row(
                       children: [
-                        SizedBox(
-                          width: 8,
-                        ),
-                        Text(
+                      
+                         SizedBox(width: screenwidth * .02),
+                        
+                       const Text(
                           "Log Out",
                           style: TextStyle(
                               fontWeight: FontWeight.bold, fontSize: 16),
                         ),
-                        SizedBox(width: 144),
-                        Icon(
+                      SizedBox(width: screenwidth * .38),
+                       const Icon(
                           Icons.arrow_forward,
                           size: 30,
                         )
                       ],
                     ))),
-            const SizedBox(
-              height: 20,
-            ),
             SizedBox(
-                width: 310,
-                height: 55,
+              height: screenheight * .025),
+            SizedBox(
+                width: screenwidth * .8,
+                height: screenheight *.07,
                 child: ElevatedButton.icon(
                     style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(
@@ -218,20 +199,18 @@ class DoctorProfile extends StatelessWidget {
                       size: 30,
                       color: Colors.red,
                     ),
-                    label: const Row(
+                    label:  Row(
                       children: [
-                        SizedBox(
-                          width: 8,
-                        ),
-                        Text(
+                        SizedBox(width: screenwidth * .02),
+                       const Text(
                           "Delete Account",
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
                               color: Colors.red,
                               fontSize: 16),
                         ),
-                        SizedBox(width: 90),
-                        Icon(
+                        SizedBox(width: screenwidth * .24),
+                       const Icon(
                           Icons.arrow_forward,
                           size: 30,
                           color: Colors.red,

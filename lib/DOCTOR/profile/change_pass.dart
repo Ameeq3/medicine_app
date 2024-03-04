@@ -9,11 +9,13 @@ class DoctorChangePass extends StatelessWidget {
 
   @override                                                            
   Widget build(BuildContext context) {
+     double screenwidth = MediaQuery.of(context).size.width;
+    double screenheight = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
         flexibleSpace: Container(
           decoration: BoxDecoration(
-          color: Colors.blueGrey[700]
+          color: Colors.teal[700]
           ),
         ),
         elevation: 0,
@@ -22,7 +24,7 @@ class DoctorChangePass extends StatelessWidget {
         height: double.infinity,
         width: double.infinity,
         decoration: BoxDecoration(
-           color: Colors.blueGrey[700]
+           color: Colors.teal[700]
            ),
         child: Form(
           key: _formKey,
@@ -30,8 +32,8 @@ class DoctorChangePass extends StatelessWidget {
             child: Column(
               
               children: [
-                const SizedBox(
-                  height: 30,
+                 SizedBox(
+                  height: screenheight *.05
                 ),
                const Text("Change Password",
                 style: TextStyle(
@@ -39,8 +41,8 @@ class DoctorChangePass extends StatelessWidget {
                   fontSize: 20,
                   fontWeight: FontWeight.bold
                 ),),
-               const SizedBox(
-                  height: 20,
+                SizedBox(
+                  height: screenheight *.03
                 ),
                const CircleAvatar(
                   radius: 80,
@@ -50,8 +52,8 @@ class DoctorChangePass extends StatelessWidget {
                     backgroundImage: AssetImage("assets/profile.jpg"),
                   ),
                 ),
-               const SizedBox(
-                  height: 50,
+                SizedBox(
+                  height: screenheight *.07
                 ),
               
                   Padding(
@@ -116,13 +118,16 @@ class DoctorChangePass extends StatelessWidget {
                     
                   ),
                 ),
-               const SizedBox(height: 25,),
                 SizedBox(
-                  width: 150,
+                  height: screenheight *.025
+                ),
+                SizedBox(
+                   width: screenwidth * .34,
+                height: screenheight *.05,
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-                      backgroundColor: const Color.fromARGB(255, 57, 144, 182)),
+                      backgroundColor: Colors.teal[800]),
                     onPressed: (){
                       if (_formKey.currentState!.validate()){
                         Navigator.of(context).pop(MaterialPageRoute(builder: (context)=>const Profile()));

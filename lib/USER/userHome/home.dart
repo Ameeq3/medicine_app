@@ -6,6 +6,8 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenwidth = MediaQuery.of(context).size.width;
+    double screenheight = MediaQuery.of(context).size.height;
     return Scaffold(
       body: SizedBox(
         height: double.infinity,
@@ -19,21 +21,19 @@ class Home extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Padding(
-                    padding: EdgeInsets.only(top: 70, left: 20),
+                   Padding(
+                    padding: const EdgeInsets.only(top: 70, left: 20),
                     child: Row(
                       children: [
-                        CircleAvatar(
+                       const CircleAvatar(
                           radius: 30,
                           backgroundImage: AssetImage("assets/profile.jpg"),
                         ),
-                        SizedBox(
-                          width: 15,
-                        ),
+                       SizedBox(width: screenwidth * .05),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
+                           const Text(
                               "Hello",
                               style: TextStyle(
                                   color: Colors.white,
@@ -41,9 +41,9 @@ class Home extends StatelessWidget {
                                   fontSize: 16),
                             ),
                             SizedBox(
-                              height: 5,
+                              height: screenheight *.0001
                             ),
-                            Text(
+                           const Text(
                               "Shuhaib Malik",
                               style: TextStyle(
                                   color: Colors.white,
@@ -55,29 +55,7 @@ class Home extends StatelessWidget {
                       ],
                     ),
                   ),
-                  // SizedBox(
-                  //   height: 25,
-                  // ),
-                  // Padding(
-                  //   padding: EdgeInsets.only(left: 20),
-                  //   child: Text(
-                  //     "CREATE",
-                  //     style: TextStyle(
-                  //         color: Colors.white,
-                  //         fontSize: 22,
-                  //         fontWeight: FontWeight.bold),
-                  //   ),
-                  // ),
-                  // Padding(
-                  //   padding: EdgeInsets.only(left: 20, top: 8),
-                  //   child: Text(
-                  //     "NEW SCHEDULE",
-                  //     style: TextStyle(
-                  //         color: Colors.white,
-                  //         fontSize: 22,
-                  //         fontWeight: FontWeight.bold),
-                  //   ),
-                  // ),
+                  
                   Row(
                     children: [
                       Padding(
@@ -129,8 +107,8 @@ class Home extends StatelessWidget {
                         ),
                       ),
                     ),
-                  const  SizedBox(
-                      height: 65,
+                    SizedBox(
+                      height: screenheight *.1
                     ),
                     Column(
                       children: [
@@ -149,17 +127,7 @@ class Home extends StatelessWidget {
                 ),
               ),
             ),
-            // Positioned(
-            //   top: 120,
-            //   left: 220,
-            //   child: Container(
-            //     clipBehavior: Clip.antiAliasWithSaveLayer,
-            //     height: 190,
-            //     width: 190,
-            //     decoration: BoxDecoration(),
-            //     child: Image.asset("assets/medicine.png"),
-            //   ),
-            // )
+           
           ],
         ),
       ),

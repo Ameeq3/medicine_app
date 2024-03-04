@@ -1,6 +1,7 @@
 import 'package:fluid_bottom_nav_bar/fluid_bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:pill/USER/Add%20med/add.dart';
+import 'package:pill/USER/Add%20med/store.dart';
 import 'package:pill/USER/userHome/home.dart';
 import 'package:pill/USER/Profile/profile.dart';
 
@@ -43,7 +44,11 @@ class _FluidNavBarDemoState extends State {
             FluidNavBarIcon(
                 icon: Icons.add,
                 backgroundColor: Colors.white,
-                extras: {"label": "Add medication"}),
+                extras: {"label": "Medication"}),
+                 FluidNavBarIcon(
+                icon: Icons.store,
+                backgroundColor: Colors.white,
+                extras: {"label": "Profile"}),
             FluidNavBarIcon(
                 icon: Icons.person,
                 backgroundColor: Colors.white,
@@ -74,9 +79,12 @@ class _FluidNavBarDemoState extends State {
         case 1:
           _child = const AddMedcine();
           break;
-        case 2:
+            case 2:
+          _child = const Store(); 
+        case 3:
           _child = const Profile();
           break;
+       
       }
       _child = AnimatedSwitcher(
         switchInCurve: Curves.easeOut,

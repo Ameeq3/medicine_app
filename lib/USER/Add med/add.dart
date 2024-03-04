@@ -1,6 +1,5 @@
 import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:intl/intl.dart';
 import 'package:pill/USER/Add%20med/Listtile.dart';
 import 'package:pill/USER/Add%20med/numberstepper.dart';
@@ -39,9 +38,13 @@ class _AddMedcineState extends State<AddMedcine> {
   ];
   @override
   Widget build(BuildContext context) {
+     double screenwidth = MediaQuery.of(context).size.width;
+    double screenheight = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
+        toolbarHeight: 90,
         flexibleSpace: Container(
+          
           decoration: const BoxDecoration(
             gradient: LinearGradient(
           begin: Alignment.topCenter,
@@ -59,13 +62,13 @@ class _AddMedcineState extends State<AddMedcine> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(left: 35,top: 60),
+                    padding: const EdgeInsets.only(left: 35,top: 30),
                     child: Image.asset("assets/reminder-pills-512.webp",
                     height: 50,
                     width: 50,)
                   ),
                  const Padding(
-                    padding: EdgeInsets.only(left: 50,top: 60),
+                    padding: EdgeInsets.only(left: 50,top: 30),
                     child: Center(
                       child: Text(
                         "Capsule",
@@ -77,7 +80,7 @@ class _AddMedcineState extends State<AddMedcine> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(left: 100,top: 60),
+                    padding: const EdgeInsets.only(left: 100,top: 30),
                     child: TextButton(onPressed: (){
                       Navigator.push(context, MaterialPageRoute(builder: (context)=>const Schedules()));
                     },
@@ -111,7 +114,9 @@ class _AddMedcineState extends State<AddMedcine> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-            
+            SizedBox(
+              height: screenheight *.04,
+            ),
               
              
              const Text(

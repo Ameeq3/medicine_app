@@ -9,6 +9,8 @@ class ChangePass extends StatelessWidget {
 
   @override                                                            
   Widget build(BuildContext context) {
+     double screenwidth = MediaQuery.of(context).size.width;
+    double screenheight = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
         flexibleSpace: Container(
@@ -50,18 +52,14 @@ class ChangePass extends StatelessWidget {
             child: Column(
               
               children: [
-                const SizedBox(
-                  height: 30,
-                ),
+                SizedBox(height: screenheight * .05),
                const Text("Change Password",
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 20,
                   fontWeight: FontWeight.bold
                 ),),
-               const SizedBox(
-                  height: 20,
-                ),
+               SizedBox(height: screenheight * .04),
                const CircleAvatar(
                   radius: 80,
                   backgroundColor: Colors.white,
@@ -70,9 +68,7 @@ class ChangePass extends StatelessWidget {
                     backgroundImage: AssetImage("assets/profile.jpg"),
                   ),
                 ),
-               const SizedBox(
-                  height: 50,
-                ),
+               SizedBox(height: screenheight * .07),
               
                   Padding(
                     padding: const EdgeInsets.only(left: 20, right: 20, top: 10),
@@ -138,9 +134,10 @@ class ChangePass extends StatelessWidget {
                     
                   ),
                 ),
-               const SizedBox(height: 25,),
+               SizedBox(height: screenheight * .025),
                 SizedBox(
-                  width: 150,
+                width: screenwidth * .34,
+                  height: screenheight * .05,
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),

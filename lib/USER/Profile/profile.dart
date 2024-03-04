@@ -8,6 +8,8 @@ class Profile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+     double screenwidth = MediaQuery.of(context).size.width;
+    double screenheight = MediaQuery.of(context).size.height;
     return Scaffold(
       body: Container(
         height: double.infinity,
@@ -27,9 +29,8 @@ class Profile extends StatelessWidget {
         )),
         child: Column(
           children: [
-            const SizedBox(
-              height: 70,
-            ),
+           SizedBox(height: screenheight * .08),
+            
             const Text(
               "Profile",
               style: TextStyle(
@@ -37,9 +38,7 @@ class Profile extends StatelessWidget {
                   color: Colors.white,
                   fontSize: 21),
             ),
-            const SizedBox(
-              height: 20,
-            ),
+           SizedBox(height: screenheight * .03),
             CircleAvatar(
               radius: 60,
               backgroundColor: Colors.white,
@@ -61,19 +60,15 @@ class Profile extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(
-              height: 15,
-            ),
+            SizedBox(height: screenheight * .02),
             const Text(
               "Shuhaib Malik",
               style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
-                  fontSize: 18),
+                  fontSize: 22),
             ),
-            const SizedBox(
-              height: 10,
-            ),
+             SizedBox(height: screenheight * .01),
             const Text(
               "shuhaibmalik@gmail.com",
               style: TextStyle(
@@ -81,9 +76,7 @@ class Profile extends StatelessWidget {
                   color: Colors.white,
                   fontSize: 18),
             ),
-            const SizedBox(
-              height: 7,
-            ),
+             SizedBox(height: screenheight * .002),
             const Text(
               "7510115506",
               style: TextStyle(
@@ -91,9 +84,7 @@ class Profile extends StatelessWidget {
                   color: Colors.white,
                   fontSize: 18),
             ),
-            const SizedBox(
-              height: 7,
-            ),
+             SizedBox(height: screenheight * .002),
             const Text(
               "kochi , Kakkanad",
               style: TextStyle(
@@ -101,12 +92,11 @@ class Profile extends StatelessWidget {
                   color: Colors.white,
                   fontSize: 18),
             ),
-            const SizedBox(
-              height: 30,
-            ),
             SizedBox(
-              width: 130,
-              height: 45,
+              height: screenheight * .029),
+            SizedBox(
+               width: screenwidth * .34,
+                height: screenheight *.06,
               child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
@@ -126,12 +116,10 @@ class Profile extends StatelessWidget {
                         fontWeight: FontWeight.bold, color: Colors.white),
                   )),
             ),
-            const SizedBox(
-              height: 30,
-            ),
+             SizedBox(height: screenheight * .03),
             SizedBox(
-                width: 310,
-                height: 55,
+               width: screenwidth * .8,
+                height: screenheight *.07,
                 child: ElevatedButton.icon(
                     style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(
@@ -146,30 +134,30 @@ class Profile extends StatelessWidget {
                       size: 30,
                       color: Colors.blue
                     ),
-                    label: const Row(
+                    label: Row(
                       children: [
-                        SizedBox(
-                          width: 8,
-                        ),
-                        Text(
+                        
+                         SizedBox(width: screenwidth * .02),
+                        
+                       const Text(
                           "Change Password",
                           style: TextStyle(
                               fontWeight: FontWeight.bold, fontSize: 16,color: Colors.white),
                         ),
-                        SizedBox(width:60),
-                        Icon(
+                       SizedBox(width: screenwidth * .17),
+                       const Icon(
                           Icons.arrow_forward,
                           size: 30,
                           color: Colors.blue,
                         )
                       ],
                     ))),
-            const SizedBox(
-              height: 20,
-            ),
             SizedBox(
-                width: 310,
-                height: 55,
+              height: screenheight * .025),
+            
+            SizedBox(
+                width: screenwidth * .8,
+                height: screenheight *.07,
                 child: ElevatedButton.icon(
                     style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(
@@ -184,30 +172,27 @@ class Profile extends StatelessWidget {
                       size: 30,
                       color: Colors.blue,
                     ),
-                    label: const Row(
+                    label: Row(
                       children: [
-                        SizedBox(
-                          width: 8,
-                        ),
-                        Text(
+                         SizedBox(width: screenwidth * .02),
+                       const Text(
                           "Log Out",
                           style: TextStyle(
                               fontWeight: FontWeight.bold, fontSize: 16,color: Colors.white),
                         ),
-                        SizedBox(width: 136),
-                        Icon(
+                      SizedBox(width: screenwidth * .359),
+                       const Icon(
                           Icons.arrow_forward,
                           size: 30,
                           color: Colors.blue,
                         )
                       ],
                     ))),
-            const SizedBox(
-              height: 20,
-            ),
             SizedBox(
-                width: 310,
-                height: 55,
+              height: screenheight * .025),
+            SizedBox(
+               width: screenwidth * .8,
+                height: screenheight *.07,
                 child: ElevatedButton.icon(
                     style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(
@@ -220,24 +205,17 @@ class Profile extends StatelessWidget {
                       size: 30,
                       color: Colors.red,
                     ),
-                    label: const Row(
+                    label:  Row(
                       children: [
-                        SizedBox(
-                          width: 8,
-                        ),
-                        Text(
+                       SizedBox(width: screenwidth * .02),
+                       const Text(
                           "Delete Account",
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
                               color: Colors.red,
                               fontSize: 16),
                         ),
-                        SizedBox(width: 90),
-                        // Icon(
-                        //   Icons.arrow_forward,
-                        //   size: 30,
-                        //   color: Colors.red,
-                        // )
+                       
                       ],
                     ))),
           ],

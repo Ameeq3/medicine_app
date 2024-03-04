@@ -11,6 +11,9 @@ class ShopAddmedicine extends StatefulWidget {
 class _ShopAddmedicineState extends State<ShopAddmedicine> {
   @override
   Widget build(BuildContext context) {
+    double screenwidth = MediaQuery.of(context).size.width;
+    double screenheight = MediaQuery.of(context).size.height;
+    
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -103,7 +106,7 @@ class _ShopAddmedicineState extends State<ShopAddmedicine> {
         child: Center(
           child: GridView.builder(
             shrinkWrap: true,
-            padding: const EdgeInsets.symmetric(horizontal: 18),
+            padding: const EdgeInsets.all(15),
             itemCount: 8,
             itemBuilder: (ctx, i) {
               return Card(
@@ -123,9 +126,9 @@ class _ShopAddmedicineState extends State<ShopAddmedicine> {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
-                        const SizedBox(
-                          height: 140,
-                         ),
+                        SizedBox(
+                          height: screenheight *.17,
+                        ),
                           Text(
                             'Title$i',
                             style: const TextStyle(

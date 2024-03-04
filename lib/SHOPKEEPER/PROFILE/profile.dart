@@ -8,6 +8,8 @@ class ShopProfile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenwidth = MediaQuery.of(context).size.width;
+            double screenheight = MediaQuery.of(context).size.height;
     return Scaffold(
       body: Container(
         height: double.infinity,
@@ -17,8 +19,8 @@ class ShopProfile extends StatelessWidget {
         ),
         child: Column(
           children: [
-            const SizedBox(
-              height: 70,
+             SizedBox(
+              height: screenheight *.08
             ),
             const Text(
               "Profile",
@@ -27,8 +29,8 @@ class ShopProfile extends StatelessWidget {
                   color: Colors.white,
                   fontSize: 21),
             ),
-            const SizedBox(
-              height: 20,
+             SizedBox(
+              height: screenheight *.03
             ),
             CircleAvatar(
               radius: 60,
@@ -51,8 +53,8 @@ class ShopProfile extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(
-              height: 15,
+             SizedBox(
+              height: screenheight *.02
             ),
             const Text(
               "Najeeb Malik",
@@ -61,8 +63,8 @@ class ShopProfile extends StatelessWidget {
                   color: Colors.white,
                   fontSize: 22),
             ),
-            const SizedBox(
-              height: 10,
+             SizedBox(
+              height: screenheight *.013
             ),
              const Text(
               "License Id : 2001564",
@@ -71,9 +73,7 @@ class ShopProfile extends StatelessWidget {
                   color: Colors.white,
                   fontSize: 18),
             ),
-            const SizedBox(
-              height: 7,
-            ),
+            SizedBox(height: screenheight * .007),
             const Text(
               "shuhaibmalik@gmail.com",
               style: TextStyle(
@@ -81,9 +81,7 @@ class ShopProfile extends StatelessWidget {
                   color: Colors.white,
                   fontSize: 18),
             ),
-            const SizedBox(
-              height: 7,
-            ),
+            SizedBox(height: screenheight * .007),
             const Text(
               "7034534532",
               style: TextStyle(
@@ -91,9 +89,9 @@ class ShopProfile extends StatelessWidget {
                   color: Colors.white,
                   fontSize: 18),
             ),
-            const SizedBox(
-              height: 7,
-            ),
+          
+             SizedBox(height: screenheight * .007),
+            
             const Text(
               "kochi , Kakkanad",
               style: TextStyle(
@@ -101,12 +99,10 @@ class ShopProfile extends StatelessWidget {
                   color: Colors.white,
                   fontSize: 18),
             ),
-            const SizedBox(
-              height: 30,
-            ),
+            SizedBox(height: screenheight * .04),
             SizedBox(
-              width: 130,
-              height: 45,
+              width: screenwidth * .34,
+                height: screenheight *.06,
               child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
@@ -126,12 +122,10 @@ class ShopProfile extends StatelessWidget {
                         fontWeight: FontWeight.bold, color: Colors.white),
                   )),
             ),
-            const SizedBox(
-              height: 20,
-            ),
+             SizedBox(height: screenheight * .03),
             SizedBox(
-                width: 310,
-                height: 55,
+               width: screenwidth * .8,
+                height: screenheight *.07,
                 child: ElevatedButton.icon(
                     style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(
@@ -145,29 +139,26 @@ class ShopProfile extends StatelessWidget {
                       Icons.key,
                       size: 30,
                     ),
-                    label: const Row(
+                    label:  Row(
                       children: [
-                        SizedBox(
-                          width: 8,
-                        ),
-                        Text(
+                       SizedBox(width: screenwidth * .02),
+                       const Text(
                           "Change Password",
                           style: TextStyle(
                               fontWeight: FontWeight.bold, fontSize: 16),
                         ),
-                        SizedBox(width: 70),
-                        Icon(
+                        SizedBox(width: screenwidth * .19),
+                       const Icon(
                           Icons.arrow_forward,
                           size: 30,
                         )
                       ],
                     ))),
-            const SizedBox(
-              height: 20,
-            ),
+           SizedBox(
+              height: screenheight * .025),
             SizedBox(
-                width: 310,
-                height: 55,
+               width: screenwidth * .8,
+                height: screenheight *.07,
                 child: ElevatedButton.icon(
                     style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(
@@ -181,29 +172,26 @@ class ShopProfile extends StatelessWidget {
                       Icons.logout,
                       size: 30,
                     ),
-                    label: const Row(
+                    label:  Row(
                       children: [
-                        SizedBox(
-                          width: 8,
-                        ),
-                        Text(
+                       SizedBox(width: screenwidth * .02),
+                       const Text(
                           "Log Out",
                           style: TextStyle(
                               fontWeight: FontWeight.bold, fontSize: 16),
                         ),
-                        SizedBox(width: 144),
-                        Icon(
+                         SizedBox(width: screenwidth * .38),
+                       const Icon(
                           Icons.arrow_forward,
                           size: 30,
                         )
                       ],
                     ))),
-            const SizedBox(
-              height: 20,
-            ),
+             SizedBox(
+              height: screenheight * .025),
             SizedBox(
-                width: 310,
-                height: 55,
+               width: screenwidth * .8,
+                height: screenheight *.07,
                 child: ElevatedButton.icon(
                     style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(
@@ -216,20 +204,18 @@ class ShopProfile extends StatelessWidget {
                       size: 30,
                       color: Colors.red,
                     ),
-                    label: const Row(
+                    label:  Row(
                       children: [
-                        SizedBox(
-                          width: 8,
-                        ),
-                        Text(
+                        SizedBox(width: screenwidth * .02),
+                       const Text(
                           "Delete Account",
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
                               color: Colors.red,
                               fontSize: 16),
                         ),
-                        SizedBox(width: 90),
-                        Icon(
+                        SizedBox(width: screenwidth * .24),
+                       const Icon(
                           Icons.arrow_forward,
                           size: 30,
                           color: Colors.red,

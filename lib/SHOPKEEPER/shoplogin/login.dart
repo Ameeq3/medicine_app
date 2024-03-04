@@ -12,6 +12,8 @@ class ShopLoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //double screenwidth = MediaQuery.of(context).size.width;
+            double screenheight = MediaQuery.of(context).size.height;
     return Scaffold(
       body: Container(
         height: double.infinity,
@@ -23,8 +25,8 @@ class ShopLoginPage extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                const SizedBox(
-                  height: 160,
+                SizedBox(
+                  height: screenheight * .20,
                 ),
                 const Padding(
                   padding: EdgeInsets.only(right: 170),
@@ -46,8 +48,8 @@ class ShopLoginPage extends StatelessWidget {
                         color: Colors.white),
                   ),
                 ),
-                const SizedBox(
-                  height: 80,
+                SizedBox(
+                   height:screenheight * .10,
                 ),
                 Padding(
                   padding: const EdgeInsets.only(right: 45, left: 45, bottom: 15),
@@ -123,8 +125,8 @@ class ShopLoginPage extends StatelessWidget {
                         )),
                   ),
                 ),
-                const SizedBox(
-                  height: 35,
+                SizedBox(
+                  height: screenheight * .03,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -162,8 +164,8 @@ class ShopLoginPage extends StatelessWidget {
                     )
                   ],
                 ),
-                const SizedBox(
-                  height: 110,
+                SizedBox(
+                  height: screenheight * .13,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,

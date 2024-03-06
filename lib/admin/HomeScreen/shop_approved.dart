@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class DoctorApproved extends StatelessWidget {
-  const DoctorApproved({super.key});
+class ShopApproved extends StatelessWidget {
+  const ShopApproved({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // double screenwidth = MediaQuery.of(context).size.width;
+   // double screenwidth = MediaQuery.of(context).size.width;
             double screenheight = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor:Colors.blueGrey[700],
@@ -18,21 +18,18 @@ class DoctorApproved extends StatelessWidget {
         ),elevation: 0,
         backgroundColor: Colors.blueGrey[700]
       ),
-      body: SafeArea(
-          child: Column(
+      body: SafeArea(child: 
+      Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-        const Padding(
+          const Padding(
            padding: EdgeInsets.only(left: 20),
-           child: Text("Doctors",
+           child: Text("Shopkeepper",
            style: TextStyle(
             fontSize: 22,
             color: Colors.white,
             fontWeight: FontWeight.bold
            ),),
-         ),
-         SizedBox(
-          height: screenheight * 1/100,
          ),
           Expanded(
             child: ListView.builder(
@@ -94,7 +91,6 @@ class DoctorApproved extends StatelessWidget {
               },
             ),
           ),
-           
         ],
       )),
     );

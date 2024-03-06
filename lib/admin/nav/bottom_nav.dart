@@ -2,6 +2,7 @@ import 'package:floating_bottom_navigation_bar/floating_bottom_navigation_bar.da
 import 'package:flutter/material.dart';
 import 'package:pill/ADMIN/HomeScreen/doc_req.dart';
 import 'package:pill/ADMIN/HomeScreen/pendingdocter.dart';
+import 'package:pill/ADMIN/HomeScreen/shop_approved.dart';
 import 'package:pill/ADMIN/HomeScreen/shoprequest.dart';
 
 class AdminNavBar extends StatefulWidget {
@@ -42,7 +43,8 @@ class _AdminNavBarState extends State<AdminNavBar> {
             });
           },
           children: const [
-            AdminPendingDoctor(),
+            DoctorApproved(),
+            ShopApproved(),
             DoctorRequest(),
             ShopRequest(),
             
@@ -54,7 +56,8 @@ class _AdminNavBarState extends State<AdminNavBar> {
           child: FloatingNavbar(
             backgroundColor: Colors.blueGrey[700],
             items: [
-              FloatingNavbarItem(icon: Icons.approval_outlined, title: 'Approved List'),
+              FloatingNavbarItem(icon: Icons.approval_outlined, title: 'Doctor Approved'),
+               FloatingNavbarItem(icon: Icons.approval_outlined, title: 'Shop Approved'),
               FloatingNavbarItem(icon: Icons.medical_services_outlined,
               title: 'Doctor'),
               FloatingNavbarItem(icon: Icons.shopping_cart_checkout_outlined, title: 'Shopkeeper'),

@@ -11,7 +11,6 @@ class ShopAddmedicine extends StatefulWidget {
 class _ShopAddmedicineState extends State<ShopAddmedicine> {
   @override
   Widget build(BuildContext context) {
-    double screenwidth = MediaQuery.of(context).size.width;
     double screenheight = MediaQuery.of(context).size.height;
     
     return Scaffold(

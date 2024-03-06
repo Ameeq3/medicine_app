@@ -1,7 +1,6 @@
 import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:pill/USER/Add%20med/Listtile.dart';
 import 'package:pill/USER/Add%20med/numberstepper.dart';
 
 
@@ -38,11 +37,10 @@ class _AddMedcineState extends State<AddMedcine> {
   ];
   @override
   Widget build(BuildContext context) {
-     double screenwidth = MediaQuery.of(context).size.width;
     double screenheight = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 90,
+        toolbarHeight: 30,
         flexibleSpace: Container(
           
           decoration: const BoxDecoration(
@@ -79,17 +77,7 @@ class _AddMedcineState extends State<AddMedcine> {
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 100,top: 30),
-                    child: TextButton(onPressed: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>const Schedules()));
-                    },
-                     child: const Text("Done",
-                     style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold
-                     ),))
-                  ),
+                
                 ],
               ),
         ),elevation: 0,
@@ -115,7 +103,7 @@ class _AddMedcineState extends State<AddMedcine> {
           child: Column(
             children: [
             SizedBox(
-              height: screenheight *.04,
+              height: screenheight *.02,
             ),
               
              
@@ -348,7 +336,9 @@ class _AddMedcineState extends State<AddMedcine> {
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
                     backgroundColor: Colors.green[600]
                   ),
-                  onPressed: (){},
+                  onPressed: (){
+                    Navigator.pop(context);
+                  },
                  child: const Text("Submit")),
               )
             ],

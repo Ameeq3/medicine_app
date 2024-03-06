@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: false,
         primaryColor: Colors.white
       ),
-      home:PSplash()
+      home: const PSplash(),
     );
   }
 }

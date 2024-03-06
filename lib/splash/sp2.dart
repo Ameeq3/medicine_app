@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:pill/DOCTOR/login/login.dart';
+import 'package:pill/splash/sp1.dart';
 import 'package:pill/splash/sp3.dart';
 
 class SpTwo extends StatelessWidget {
@@ -6,6 +8,8 @@ class SpTwo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+   // double screenwidth = MediaQuery.of(context).size.width;
+            double screenheight = MediaQuery.of(context).size.height;
     return Scaffold(
       body: Container(
         height: double.infinity,
@@ -26,37 +30,37 @@ class SpTwo extends StatelessWidget {
         child: Center(
           child: Column(
             children: [
-              const SizedBox(
-                height: 140,
+              SizedBox(
+                height: screenheight * .19,
               ),
               const CircleAvatar(
-                backgroundColor: Colors.amber,
                 radius: 90,
-                
-               backgroundImage: AssetImage("assets/capsules.jpg"),
+              backgroundColor: Colors.transparent,
+              backgroundImage: AssetImage("assets/doctor2.png"),
               ),
-              const SizedBox(
-                height: 25,
+              SizedBox(
+                height: screenheight * .03,
               ),
-              
-              const SizedBox(
-                height: 10,
+              Text(
+                "Login As DOCTOR",
+                style: TextStyle(
+                    fontSize: 19,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.indigo[900]),
               ),
-              const Text(
-                "Add medicines by yourself ",
-                style: TextStyle(fontSize: 17, color: Colors.white),
-              ),
-              const Text(
-                "Or Scan Prescription",
-                style: TextStyle(fontSize: 17, color: Colors.white),
-              ),
-             const SizedBox(height: 10,),
-               const Text(
-                "Its easy and simple ",
-                style: TextStyle(fontSize: 15, color: Colors.black),
-              ),
-              const SizedBox(
-                height: 50,
+              // const SizedBox(
+              //   height: 10,
+              // ),
+              // const Text(
+              //   "Never forget to take ",
+              //   style: TextStyle(fontSize: 17, color: Colors.white),
+              // ),
+              // const Text(
+              //   "your medicines on time.",
+              //   style: TextStyle(fontSize: 17, color: Colors.white),
+              // ),
+              SizedBox(
+                height:screenheight * .09 ,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -66,7 +70,7 @@ class SpTwo extends StatelessWidget {
                     width: 13,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(60),
-                        color: Colors.grey[400]),
+                        color:Colors.grey[400] ),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(left: 15),
@@ -87,22 +91,33 @@ class SpTwo extends StatelessWidget {
                           borderRadius: BorderRadius.circular(60),
                           color: Colors.grey[400]),
                     ),
+                  ),
+                   Padding(
+                    padding: const EdgeInsets.only(left: 15),
+                    child: Container(
+                      height: 13,
+                      width: 13,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(60),
+                          color: Colors.grey[400]),
+                    ),
                   )
                 ],
               ),
-              const SizedBox(
-                height: 50,
+              SizedBox(
+                height:screenheight * .06,
               ),
               SizedBox(
                 height: 40,
-                width: 120,
+                width: 110,
                 child: ElevatedButton.icon(
                   style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(30)),
                       backgroundColor: Colors.teal[500]),
                   onPressed: () {
-                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const SpThree()));
+                    Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (context) =>const SpThree()));
                   },
                   label: const Text(
                     "Next",
@@ -114,14 +129,48 @@ class SpTwo extends StatelessWidget {
                   ),
                 ),
               ),
-              TextButton(
-                  onPressed: () {
-                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const SpThree()));
-                  },
-                  child: const Text(
-                    "Skip",
-                    style: TextStyle(color: Colors.grey, fontSize: 17),
-                  ))
+
+              SizedBox(
+                height: screenheight * .02,
+              ),
+             
+              SizedBox(
+                height: 40,
+                width: 60,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30)),
+                      backgroundColor: Colors.teal[500]),
+                  onPressed: (){
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const SpOne()));
+                  }, 
+                  child:const Icon(Icons.chevron_left,size: 28,color: Colors.white,)
+                  ),
+              ),
+
+             SizedBox(
+                height: screenheight * .02,
+              ),
+
+              SizedBox(
+                height: 40,
+                width: 140,
+                child: ElevatedButton(
+                   style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(30)),
+                        backgroundColor: Colors.teal[500]),
+                  onPressed: (){
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>DoctorLoginPage()));
+                  }, 
+                  child:const Text("Login/SignUp",style: TextStyle(
+                    fontSize: 15,
+                    fontWeight: FontWeight.bold,
+                  ),)
+                  ),
+              ),
+              
             ],
           ),
         ),

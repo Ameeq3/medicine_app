@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:pill/SHOPKEEPER/shoplogin/login.dart';
-import 'package:pill/splash/sp2.dart';
-import 'package:pill/splash/sp4.dart';
+import 'package:pill/ADMIN/LOGIN/login.dart';
+import 'package:pill/splash/sp3.dart';
 
-class SpThree extends StatelessWidget {
-  const SpThree({super.key});
+class SpFour extends StatelessWidget {
+  const SpFour({super.key});
 
   @override
   Widget build(BuildContext context) {
-   // double screenwidth = MediaQuery.of(context).size.width;
+    // double screenwidth = MediaQuery.of(context).size.width;
             double screenheight = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 13, 59, 97),
@@ -37,38 +36,22 @@ class SpThree extends StatelessWidget {
               const CircleAvatar(
                  backgroundColor: Colors.transparent,
                 radius: 90,
-                backgroundImage: AssetImage("assets/medical.png",),
+                backgroundImage: AssetImage("assets/admin (1).png",),
               ),
-              SizedBox(
+             SizedBox(
                 height: screenheight * .03,
               ),
               Text(
-                "PHARMACY",
+                "Login As ADMIN",
                 style: TextStyle(
                     fontSize: 19,
                     fontWeight: FontWeight.bold,
                     color: Colors.indigo[900]),
               ),
+              
+              
               SizedBox(
-                height: screenheight * .01,
-              ),
-              const Text(
-                "Sell your Medicines",
-                style: TextStyle(fontSize: 17, color: Colors.white),
-              ),
-              // const Text(
-              //   "with your loved ones",
-              //   style: TextStyle(fontSize: 17, color: Colors.white),
-              // ),
-              // const SizedBox(
-              //   height: 10,
-              // ),
-              // const Text(
-              //   "It's easy and simple ",
-              //   style: TextStyle(fontSize: 15, color: Colors.black87),
-              // ),
-              SizedBox(
-                height: screenheight * .09,
+                height: screenheight * .12,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -97,7 +80,7 @@ class SpThree extends StatelessWidget {
                       width: 13,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(60),
-                          color: Colors.green),
+                          color: Colors.grey[400]),
                     ),
                   ),
 
@@ -108,40 +91,14 @@ class SpThree extends StatelessWidget {
                       width: 13,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(60),
-                          color: Colors.grey[400]),
+                          color: Colors.green),
                     ),
-                  )
+                  ),
                 ],
               ),
               SizedBox(
-                height: screenheight * .06,
+                height: screenheight *.09,
               ),
-              SizedBox(
-                height: 40,
-                width: 140,
-                child: ElevatedButton.icon(
-                  style: ElevatedButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30)),
-                      backgroundColor: Colors.teal[500]),
-                  onPressed: () {
-                    Navigator.pushReplacement(context,
-                        MaterialPageRoute(builder: (context) => const SpFour()));
-                  },
-                  label: const Text(
-                    "Next",
-                    style: TextStyle(fontSize: 16),
-                  ),
-                  icon: const Icon(
-                    Icons.chevron_right_sharp,
-                    size: 28,
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: screenheight * .02,
-              ),
-             
               SizedBox(
                 height: 40,
                 width: 60,
@@ -151,7 +108,7 @@ class SpThree extends StatelessWidget {
                           borderRadius: BorderRadius.circular(30)),
                       backgroundColor: Colors.teal[500]),
                   onPressed: (){
-                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const SpTwo()));
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> const SpThree()));
                   }, 
                   child:const Icon(Icons.chevron_left,size: 28,color: Colors.white,)
                   ),
@@ -163,14 +120,14 @@ class SpThree extends StatelessWidget {
 
               SizedBox(
                 height: 40,
-                width: 140,
+                width: 160,
                 child: ElevatedButton(
                    style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(30)),
                         backgroundColor: Colors.teal[500]),
                   onPressed: (){
-                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>ShopLoginPage()));
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>AdminLoginPage()));
                   }, 
                   child:const Text("Login/SignUp",style: TextStyle(
                     fontSize: 15,

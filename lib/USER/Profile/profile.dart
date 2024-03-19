@@ -144,7 +144,7 @@ class Profile extends StatelessWidget {
                           style: TextStyle(
                               fontWeight: FontWeight.bold, fontSize: 16,color: Colors.white),
                         ),
-                       SizedBox(width: screenwidth * .17),
+                       SizedBox(width: screenwidth * .1711),
                        const Icon(
                           Icons.arrow_forward,
                           size: 30,

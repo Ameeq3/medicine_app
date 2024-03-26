@@ -12,24 +12,7 @@ class ChangePass extends StatelessWidget {
      double screenwidth = MediaQuery.of(context).size.width;
     double screenheight = MediaQuery.of(context).size.height;
     return Scaffold(
-      appBar: AppBar(
-        flexibleSpace: Container(
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(
-          begin: Alignment.topCenter,
-         // end: Alignment(0.8, 1),
-          colors: <Color>[
-            Color(0xFFC5CAE9),
-             Color(0xFFC5CAE9),
-            // Color(0xFF7986CB),
-            // Color(0xFF5C6BC0),
-            // Color(0xFF3F51B5),
-          ],
-          tileMode: TileMode.mirror,
-        )),
-        ),
-        elevation: 0,
-      ),
+      
       body: Container(
         height: double.infinity,
         width: double.infinity,
@@ -52,7 +35,7 @@ class ChangePass extends StatelessWidget {
             child: Column(
               
               children: [
-                SizedBox(height: screenheight * .05),
+                SizedBox(height: screenheight * .13),
                const Text("Change Password",
                 style: TextStyle(
                   color: Colors.white,

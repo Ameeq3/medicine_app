@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:pill/USER/userlogin/login.dart';
-import 'package:pill/splash/sp2.dart';
-// import 'package:pill/splash/sp3.dart';
 
 class SpOne extends StatelessWidget {
   const SpOne({super.key});
 
   @override
   Widget build(BuildContext context) {
-   // double screenwidth = MediaQuery.of(context).size.width;
+    double screenwidth = MediaQuery.of(context).size.width;
             double screenheight = MediaQuery.of(context).size.height;
     return Scaffold(
       body: Container(
@@ -105,45 +103,20 @@ class SpOne extends StatelessWidget {
                 ],
               ),
               SizedBox(
+                height: screenheight * .09,
+              ),
+             
+
+              SizedBox(
                 height: screenheight * .06,
-              ),
-              SizedBox(
-                height: 40,
-                width: 110,
-                child: ElevatedButton.icon(
-                  style: ElevatedButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30)),
-                      backgroundColor: Colors.teal[500]),
-                  onPressed: () {
-                    Navigator.pushReplacement(context,
-                        MaterialPageRoute(builder: (context) => const SpTwo()));
-                  },
-                  label: const Text(
-                    "Next",
-                    style: TextStyle(fontSize: 16),
-                  ),
-                  icon: const Icon(
-                    Icons.chevron_right_sharp,
-                    size: 28,
-                  ),
-                ),
-              ),
-
-             SizedBox(
-                height: screenheight * .02,
-              ),
-
-              SizedBox(
-                height: 40,
-                width: 160,
+                width: screenwidth * .4,
                 child: ElevatedButton(
                    style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(30)),
                         backgroundColor: Colors.teal[500]),
                   onPressed: (){
-                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>LoginPage()));
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const LoginPage()));
                   }, 
                   child:const Text("Login/SignUp",style: TextStyle(
                     fontSize: 15,

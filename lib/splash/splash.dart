@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:pill/splash/sp1.dart';
+import 'package:pill/splash/pageview.dart';
 
 
 class PSplash extends StatefulWidget {
@@ -13,7 +13,7 @@ class PSplash extends StatefulWidget {
 class _PSplashState extends State<PSplash> {
   void splashMethod(){
     Timer(const Duration(seconds: 2,milliseconds: 5), () {
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> const SpOne()),);
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> const PageViewSp()),);
      });
   }
   @override

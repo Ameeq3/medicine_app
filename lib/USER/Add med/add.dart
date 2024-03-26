@@ -9,6 +9,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:intl/intl.dart';
+import 'package:pill/USER/Add%20med/med.dart';
 
 import 'numberstepper.dart';
 
@@ -302,7 +303,9 @@ class _AddMedcineState extends State<AddMedcine> {
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(30)),
                         backgroundColor:const Color.fromARGB(255, 121, 113, 192)),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>const Schedules()));
+                    },
                     child:const Text("Submit",style: TextStyle(
                        color: Colors.white,
                     ), 

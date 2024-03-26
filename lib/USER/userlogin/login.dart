@@ -1,14 +1,46 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:pill/USER/NavBar/fluid_navbar.dart';
 import 'package:pill/USER/userlogin/forgetpass.dart';
-import 'package:pill/USER/userlogin/signup.dart';final _formKey = GlobalKey<FormState>();
+import 'package:pill/USER/userlogin/signup.dart';
+final _formKey = GlobalKey<FormState>();
 
 
-class LoginPage extends StatelessWidget {
-  LoginPage({super.key});
-  
+class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
+
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  String email = "", password = "";
   final emailController = TextEditingController();
+
   final passwordController = TextEditingController();
+  userLogin()async{  
+    try{
+      await FirebaseAuth.instance.signInWithEmailAndPassword(email: email, password: password);
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const FluidNavBarDemo()));
+    }on FirebaseAuthException catch(e){
+      if (e.code=='user-not-found') {
+         ScaffoldMessenger.of(context)
+            .showSnackBar(const SnackBar(
+                content: Text(
+          "No User Found for that Email",
+          style: TextStyle(fontSize: 18),
+        )));        
+      }else if(e.code =='wrong-password'){
+        ScaffoldMessenger.of(context)
+            .showSnackBar(const SnackBar(
+                content: Text(
+          "wrong password",
+          style: TextStyle(fontSize: 18),
+        )));
+      }
+    }
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -175,8 +207,12 @@ class LoginPage extends StatelessWidget {
                           onPressed: () {
                             
                             if (_formKey.currentState!.validate()) {
-                              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const FluidNavBarDemo()));
+                            setState(() {
+                               email = emailController.text;
+                               password = passwordController.text;
+                             });
                             }
+                            userLogin();
                           },
                           icon: const Icon(
                             Icons.arrow_right_alt_outlined,
@@ -199,7 +235,7 @@ class LoginPage extends StatelessWidget {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => SignUp()));
+                                    builder: (context) => const SignUp()));
                           },
                           child: const Text(
                             "Sign up",
@@ -214,7 +250,7 @@ class LoginPage extends StatelessWidget {
                       padding: const EdgeInsets.only(right: 35),
                       child: InkWell(
                           onTap: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=>const FogotPassword()));
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>const ForgotPass()));
                           },
                           child: const Text(
                             "forget Password",

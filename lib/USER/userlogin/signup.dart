@@ -1,12 +1,57 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:pill/USER/NavBar/fluid_navbar.dart';
 
-class SignUp extends StatelessWidget {
-  SignUp({super.key});
+class SignUp extends StatefulWidget {
+  const SignUp({super.key});
+
+  @override
+  State<SignUp> createState() => _SignUpState();
+}
+
+class _SignUpState extends State<SignUp> {
+  String email = "", password = "", name = "";
   final _formKey = GlobalKey<FormState>();
-  final emailController = TextEditingController();
-  final passwordController = TextEditingController();
-  final nameController = TextEditingController();
 
+  final emailController = TextEditingController();
+
+  final passwordController = TextEditingController();
+
+  final nameController = TextEditingController();
+  registration() async {
+    if (password != null && nameController.text !="" && emailController !="") {
+      try {
+        UserCredential userCredential = await FirebaseAuth.instance
+            .createUserWithEmailAndPassword(email: email, password: password);
+        ScaffoldMessenger.of(context)
+            .showSnackBar(const SnackBar(
+                content: Text(
+          "Rgistered Successfully",
+          style: TextStyle(fontSize: 18),
+        )));
+        Navigator.pushReplacement(context,
+            MaterialPageRoute(builder: (context) => const FluidNavBarDemo()));
+      } on FirebaseException catch (e) {
+        if (e.code == 'weak-password') {
+          ScaffoldMessenger.of(context)
+              .showSnackBar(const SnackBar(
+                  content: Text(
+            "Password Provided is too Weak",
+            style: TextStyle(fontSize: 18),
+          )));
+        } else if (e.code == "email-already-in-use") {
+          ScaffoldMessenger.of(context)
+              .showSnackBar(const SnackBar(
+                  content: Text(
+            "Account Already Exists",
+            style: TextStyle(fontSize: 18),
+          )));
+        }
+    }
+   }
+  }
+
+  
   @override
   Widget build(BuildContext context) {
     // double screenwidth = MediaQuery.of(context).size.width;
@@ -197,7 +242,15 @@ class SignUp extends StatelessWidget {
                           color: Colors.white),
                       child: IconButton(
                           onPressed: () {
-                            if (_formKey.currentState!.validate()) {}
+                            if (_formKey.currentState!.validate()) {
+                             setState(() {
+                               email = emailController.text;
+                               name = nameController.text;
+                               password = passwordController.text;
+                             });
+
+                            }
+                            registration();
                           },
                           icon: const Icon(
                             Icons.arrow_right_alt_outlined,

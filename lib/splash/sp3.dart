@@ -8,7 +8,7 @@ class SpThree extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-   // double screenwidth = MediaQuery.of(context).size.width;
+    double screenwidth = MediaQuery.of(context).size.width;
             double screenheight = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 13, 59, 97),
@@ -114,56 +114,12 @@ class SpThree extends StatelessWidget {
                 ],
               ),
               SizedBox(
-                height: screenheight * .06,
+                height: screenheight * .09,
               ),
+              
               SizedBox(
-                height: 40,
-                width: 140,
-                child: ElevatedButton.icon(
-                  style: ElevatedButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30)),
-                      backgroundColor: Colors.teal[500]),
-                  onPressed: () {
-                    Navigator.pushReplacement(context,
-                        MaterialPageRoute(builder: (context) => const SpFour()));
-                  },
-                  label: const Text(
-                    "Next",
-                    style: TextStyle(fontSize: 16),
-                  ),
-                  icon: const Icon(
-                    Icons.chevron_right_sharp,
-                    size: 28,
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: screenheight * .02,
-              ),
-             
-              SizedBox(
-                height: 40,
-                width: 60,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30)),
-                      backgroundColor: Colors.teal[500]),
-                  onPressed: (){
-                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const SpTwo()));
-                  }, 
-                  child:const Icon(Icons.chevron_left,size: 28,color: Colors.white,)
-                  ),
-              ),
-
-             SizedBox(
-                height: screenheight * .02,
-              ),
-
-              SizedBox(
-                height: 40,
-                width: 140,
+               height: screenheight * .06,
+                width: screenwidth * .4,
                 child: ElevatedButton(
                    style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(
